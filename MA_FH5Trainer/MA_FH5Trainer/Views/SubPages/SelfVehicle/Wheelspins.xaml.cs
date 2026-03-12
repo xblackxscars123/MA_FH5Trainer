@@ -7,6 +7,8 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 ﻿using MA_FH5Trainer.Cheats.ForzaHorizon5;
 using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
 using MA_FH5Trainer.Views.Windows;
@@ -55,6 +57,16 @@ using XPaint.Cheats.Core;
 using XPaint.ViewModels.SubPages.SelfVehicle;
 using XPaint.Views.Windows;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -93,6 +105,8 @@ namespace XPaint.Views.SubPages.SelfVehicle
         public MiscCheats MiscCheats = XPaint.Resources.Cheats.GetClass<MiscCheats>();
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
         public UnlocksCheats UnlocksCheatsFh5 => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
 =======
         public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
@@ -100,6 +114,12 @@ namespace XPaint.Views.SubPages.SelfVehicle
 =======
         public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+        public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+        public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 
         private async void EmoteSwitch_OnToggled(object sender, RoutedEventArgs e)
         {

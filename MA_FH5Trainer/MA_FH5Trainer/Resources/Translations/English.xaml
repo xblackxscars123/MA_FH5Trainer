@@ -64,6 +64,8 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
     <system:String x:Key="MerikasDiscord">Community</system:String>
 =======
     <system:String x:Key="CommunityLink">Community</system:String>
@@ -89,6 +91,12 @@
 =======
     <system:String x:Key="CommunityLink">Community</system:String>
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
     <system:String x:Key="GitRepository">Repository</system:String>
     <system:String x:Key="Overlay">Overlay</system:String>
     <system:String x:Key="DebugWindow">Debug Window</system:String>

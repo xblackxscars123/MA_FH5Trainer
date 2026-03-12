@@ -7,6 +7,8 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
 ﻿namespace MA_FH5Trainer.Converters;
 =======
 ﻿namespace XPaint.Converters;
@@ -35,6 +37,12 @@
 =======
 ﻿namespace XPaint.Converters;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
+=======
+﻿namespace XPaint.Converters;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
+=======
+﻿namespace XPaint.Converters;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Converters/AndBooleanMultiConverter.cs
 
 using System;
 using System.Globalization;

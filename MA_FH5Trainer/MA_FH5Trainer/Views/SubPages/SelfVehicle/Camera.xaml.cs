@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 using XPaint.Cheats.ForzaHorizon5;
 =======
 using XPaint.Cheats.Core;
@@ -10,6 +12,12 @@ using XPaint.Cheats.Core;
 =======
 using XPaint.Cheats.Core;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 using XPaint.Models;
 using XPaint.ViewModels.SubPages.SelfVehicle;
 using XPaint.Views.Windows;
@@ -33,6 +41,8 @@ public partial class Camera
     public CameraViewModel ViewModel { get; }
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
     private static CameraCheats CameraCheatsFh5 => XPaint.Resources.Cheats.GetClass<CameraCheats>();
 =======
     private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
@@ -40,6 +50,12 @@ public partial class Camera
 =======
     private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+    private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+    private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 
     private async void LimitersScanButton_OnClick(object sender, RoutedEventArgs e)
     {

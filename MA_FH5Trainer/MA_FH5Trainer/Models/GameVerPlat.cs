@@ -7,6 +7,8 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
 ﻿namespace MA_FH5Trainer.Models;
 =======
 ﻿namespace XPaint.Models;
@@ -35,6 +37,12 @@ namespace XPaint.Models;
 =======
 namespace XPaint.Models;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
+=======
+namespace XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
+=======
+namespace XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Models/GameVerPlat.cs
 
 public class GameVerPlat(string name, string platform, string update,GameVerPlat.GameType type)
 {

@@ -1,5 +1,7 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 ﻿using System.Windows.Input.Manipulations;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
@@ -42,6 +44,8 @@ namespace XPaint.Cheats.ForzaHorizon5;
 =======
 =======
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 using System.Windows.Input.Manipulations;
 using XPaint.Resources;
 using Memory;
@@ -51,9 +55,22 @@ using static XPaint.Resources.StringCipher;
 
 namespace XPaint.Cheats.Core;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 =======
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using System.Windows.Input.Manipulations;
+using XPaint.Resources;
+using Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 
 public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {

@@ -23,6 +23,8 @@ using static XPaint.Resources.Memory;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 =======
 using static XPaint.Resources.StringCipher;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
@@ -32,6 +34,12 @@ using static XPaint.Resources.StringCipher;
 =======
 using static XPaint.Resources.StringCipher;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 using Timer = System.Timers.Timer;
 using XPaint.ViewModels.Pages;
 using XPaint.ViewModels.SubPages.SelfVehicle;
@@ -72,7 +80,7 @@ public partial class MainWindowViewModel : ObservableObject
     private string _processIdText = string.Empty;
 
     [ObservableProperty]
-    private string _trainerVersion = string.Empty;
+    private string _appVersion = string.Empty;
 
     [ObservableProperty]
     private Brush _attachedBrush = Brushes.Red;
@@ -183,7 +191,15 @@ public partial class MainWindowViewModel : ObservableObject
         }
 
         ApplicationTitle = "xpaint";
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
         TrainerVersion = "v" + version.ToString();
+=======
+        AppVersion = "v" + version.ToString();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+        AppVersion = "v" + version.ToString();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
         ZeroGameText();
 
         SetupAttach();
@@ -414,6 +430,8 @@ public partial class MainWindowViewModel : ObservableObject
         {
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
             var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Fh5,
 =======
             var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
@@ -421,6 +439,12 @@ public partial class MainWindowViewModel : ObservableObject
 =======
             var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+            var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+            var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
             _ => GameVerPlat.GameType.None
         };
     }

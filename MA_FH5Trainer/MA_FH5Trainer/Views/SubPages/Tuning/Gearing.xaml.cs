@@ -2,6 +2,8 @@
 using System.Windows.Controls;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
 using XPaint.Cheats.ForzaHorizon5;
 =======
 using XPaint.Cheats.Core;
@@ -9,6 +11,12 @@ using XPaint.Cheats.Core;
 =======
 using XPaint.Cheats.Core;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
 using XPaint.Views.Windows;
 using static XPaint.Resources.Memory;
 
@@ -27,6 +35,8 @@ public partial class Gearing
     public MainWindow MainWindow { get; }
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
     private static TuningCheats TuningCheatsFh5 => XPaint.Resources.Cheats.GetClass<TuningCheats>();
     private static CarCheats CarCheatsFh5 => XPaint.Resources.Cheats.GetClass<CarCheats>();
 =======
@@ -37,6 +47,14 @@ public partial class Gearing
     private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
     private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Gearing.xaml.cs
     private static UIntPtr Ptr => GetInstance()
         .ReadMemory<UIntPtr>(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.LocalPlayer);
 

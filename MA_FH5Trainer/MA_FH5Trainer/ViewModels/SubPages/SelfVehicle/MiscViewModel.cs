@@ -1,5 +1,7 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
@@ -38,6 +40,14 @@ using XPaint.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using XPaint.Models;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
+=======
+using CommunityToolkit.Mvvm.ComponentModel;
+using XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
+=======
+using CommunityToolkit.Mvvm.ComponentModel;
+using XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/MiscViewModel.cs
 
 namespace XPaint.ViewModels.SubPages.SelfVehicle;
 

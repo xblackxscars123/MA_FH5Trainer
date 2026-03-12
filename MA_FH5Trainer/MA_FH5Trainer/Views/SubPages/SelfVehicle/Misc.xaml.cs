@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
 using XPaint.Cheats.ForzaHorizon5;
 =======
 using XPaint.Cheats.Core;
@@ -10,6 +12,12 @@ using XPaint.Cheats.Core;
 =======
 using XPaint.Cheats.Core;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
 using XPaint.Models;
 using XPaint.ViewModels.SubPages.SelfVehicle;
 using XPaint.Views.Windows;
@@ -33,6 +41,8 @@ public partial class Misc
     public MiscViewModel ViewModel { get; }
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
     private static MiscCheats MiscCheatsFh5 => XPaint.Resources.Cheats.GetClass<MiscCheats>();
     private static CarCheats CarCheatsFh5 => XPaint.Resources.Cheats.GetClass<CarCheats>();
 =======
@@ -43,6 +53,14 @@ public partial class Misc
     private static MiscCheats MiscCheatsInst => XPaint.Resources.Cheats.GetClass<MiscCheats>();
     private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+    private static MiscCheats MiscCheatsInst => XPaint.Resources.Cheats.GetClass<MiscCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+    private static MiscCheats MiscCheatsInst => XPaint.Resources.Cheats.GetClass<MiscCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
     
     private async void NameSpooferSwitch_OnToggled(object sender, RoutedEventArgs e)
     {

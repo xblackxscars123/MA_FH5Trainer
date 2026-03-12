@@ -8,6 +8,8 @@
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
 <<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
 using MA_FH5Trainer.Models;
 =======
 using XPaint.Models;
@@ -36,6 +38,12 @@ using XPaint.Models;
 =======
 using XPaint.Models;
 >>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
+=======
+using XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
+=======
+using XPaint.Models;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CheatsUtilities.cs
 using MahApps.Metro.Controls;
 using Memory;
 using static XPaint.Resources.Memory;
