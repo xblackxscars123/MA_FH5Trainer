@@ -1,10 +1,18 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Views.Windows;
-using static MA_FH5Trainer.Resources.Memory;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+using XPaint.Views.Windows;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.Tuning;
+namespace XPaint.Views.SubPages.Tuning;
 
 public partial class Tires
 {
@@ -17,10 +25,20 @@ public partial class Tires
     }
     
     public MainWindow MainWindow { get; }
-    private static TuningCheats TuningCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<TuningCheats>();
-    private static CarCheats CarCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<CarCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+    private static TuningCheats TuningCheatsFh5 => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+    private static CarCheats CarCheatsFh5 => XPaint.Resources.Cheats.GetClass<CarCheats>();
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Tires.xaml.cs
     private static UIntPtr Ptr => GetInstance()
-        .ReadMemory<UIntPtr>(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.LocalPlayer);
+        .ReadMemory<UIntPtr>(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.LocalPlayer);
     
     private async void Scan_OnClick(object sender, RoutedEventArgs e)
     {
@@ -28,12 +46,12 @@ public partial class Tires
         MainWindow.ViewModel.TuningScanToBeDone = false;
         MainWindow.ViewModel.TuningScanInProgress = true;
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
-            await TuningCheatsFh5.Scan();
+            await TuningCheatsInst.Scan();
         }
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             MainWindow.ViewModel.TuningScanSuccess = false;
             MainWindow.ViewModel.TuningScanToBeDone = true;
@@ -55,7 +73,7 @@ public partial class Tires
 
     private void ValueBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (!TuningCheatsFh5.WasScanSuccessful || _codeChange)
+        if (!TuningCheatsInst.WasScanSuccessful || _codeChange)
         {
             return;
         }
@@ -99,7 +117,7 @@ public partial class Tires
 
     private void UpdateValue()
     {
-        if (ValueBox == null || !TuningCheatsFh5.WasScanSuccessful)
+        if (ValueBox == null || !TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }

@@ -1,9 +1,41 @@
 using System.DirectoryServices;
 using System.Windows;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CarCheats.cs
 
 public static class CarCheatsOffsets
 {
@@ -46,7 +78,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _localPlayerHookAddress = 0;
         LocalPlayerHookDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? 49 8B ? 49 8B ? 0F 28";
+        var sig = D("4QjRbM4O60mYG858vBf0UeUbzny8F/RR5RvOfLho9Fuf");
         _localPlayerHookAddress = await SmartAobScan(sig);
         if (_localPlayerHookAddress == 0)
         {
@@ -123,7 +155,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
 
     private static async Task<UIntPtr> CheatRacePtr()
     {
-        const string sig = "48 8B ? ? ? ? ? 48 8B ? ? ? 48 8B ? ? ? ? ? ? 48 85 ? 74 ? 48 8B ? ? 48 85";
+        var sig = D("kwPRZMoO60mYG858tw7rSZMD0WTKDutJmBvOfLwW9FHlG858tw7rSZgbzny3DuBRhwPEfLcO412HBNFosA7sK4cE0WOoGuxJnw4=");
         var scanResult = (IntPtr)await SmartAobScan(sig);
 
         if (scanResult > 0)
@@ -142,7 +174,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _accelAddress = 0;
         AccelDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? 41 0F ? ? 0F C6 DB ? 41 0F";
+        var sig = D("4QjRbM4O60mYG858vB/0WeEbzny3DuQvh3jHfMxs9FaHD8B8uGg=");
         _accelAddress = await SmartAobScan(sig);
         if (_accelAddress == 0)
         {
@@ -188,7 +220,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _gravityAddress = 0;
         GravityDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? F3 0F ? ? ? ? ? ? F3 0F ? ? ? ? ? ? 45 84 ? 74";
+        var sig = D("4QjRbM4O60mYG858zh30WeEbzny3DutJmBvOfLcOklqHC7d8tw7rSZgbzny3DutJkw7RZLwO60mQDw==");
         _gravityAddress = await SmartAobScan(sig);
         if (_gravityAddress > 0)
         {
@@ -226,7 +258,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _waypointAddress = 0;
         WaypointDetourAddress = 0;
 
-        const string sig = "0F 10 ? ? ? ? ? 0F 28 ? 0F C2 ? 00 0F 50";
+        var sig = D("l33RbbgO60mYG858tw7rSZd90W6wDutJl33RH7oO60mXC9Fszg7hWQ==");
         _waypointAddress = await SmartAobScan(sig);
         if (_waypointAddress > 0)
         {
@@ -261,7 +293,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _freezeAiAddress = 0;
         FreezeAiDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? ? ? ? F3 0F ? ? F3 0F ? ? 0F 57 ? F3 0F ? ? ? ? ? ? F3 0F ? ? C3";
+        var sig = D("4QjRbM4O60mYG858tw7rSZgbt2+oHpJJmBvOfM4d9FnhG858tw7kL4cOxny3DpJahwu3fLcO60mYG858tw7rSeEI0WzODutJmBuybw==");
         _freezeAiAddress = await SmartAobScan(sig);
 
         if (_freezeAiAddress > 0)
@@ -296,7 +328,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _noWaterDragAddress = 0;
         NoWaterDragDetourAddress = 0;
 
-        const string sig = "48 8B ? F3 0F ? ? ? 53 55";
+        var sig = D("kwPRZMoO60nhCNFszg7rSZgbzny9HfRckg==");
         _noWaterDragAddress = await SmartAobScan(sig);
 
         if (_noWaterDragAddress > 0)
@@ -326,7 +358,7 @@ public class CarCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _noClipAddress = 0;
         NoClipDetourAddress = 0;
 
-        const string sig = "48 8B ? 4C 89 ? ? 56 41 ? 41";
+        var sig = D("kwPRZMoO60mTeNFksQ7rSZgbxGqoGuVJmBvFbQ==");
         _noClipAddress = await SmartAobScan(sig);
 
         if (_noClipAddress > 0)

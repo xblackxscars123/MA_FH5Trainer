@@ -1,9 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using static MA_FH5Trainer.Resources.Cheats;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/UnlocksViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/UnlocksViewModel.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/UnlocksViewModel.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/SubPages/SelfVehicle/UnlocksViewModel.cs
+using static XPaint.Resources.Cheats;
 
-namespace MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
+namespace XPaint.ViewModels.SubPages.SelfVehicle;
 
 public partial class UnlocksViewModel : ObservableObject
 {

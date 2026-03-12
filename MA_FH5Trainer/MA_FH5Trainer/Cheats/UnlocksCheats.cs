@@ -1,10 +1,59 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 ﻿using System.Windows.Input.Manipulations;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 using MA_FH5Trainer.Resources;
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+using XPaint.Resources;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 using Memory;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+=======
+using XPaint.Resources;
+using Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+using System.Windows.Input.Manipulations;
+using XPaint.Resources;
+using Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/UnlocksCheats.cs
 
 public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {
@@ -40,7 +89,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
     {
         if (_getWheelspinsAddress == 0)
         {
-            _getWheelspinsAddress = await SmartAobScan("48 89 ? ? ? 57 48 83 EC ? E8 ? ? ? ? F3 48 ? ? ? 48 8D ? ? ? 48 8B ? ? ? ? ? E8 ? ? ? ? 90 44 8B ? 33 D2");
+            _getWheelspinsAddress = await SmartAobScan(D("kwPRZLEO60mYG858vRn0XZ8byW+oa5dJmBu0ZKgR9FaHBNFjqGjnSZMD0WOoEfRWhw/JfLBq9FaHBNFjqBrsSZ950WOoEfRWhwTRY6hr7EmYG858tw7rSZ4L0Wi8DuwrhwTRb7sOkFs="));
         }
 
         if (_getWheelspinsAddress == 0)
@@ -95,7 +144,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
     {
         if (_getSuperWheelspinsAddress == 0)
         {
-            _getSuperWheelspinsAddress = await SmartAobScan("48 89 ? ? ? 57 48 83 EC ? E8 ? ? ? ? F3 48 ? ? ? 48 8D ? ? ? 48 8B ? ? ? ? ? E8 ? ? ? ? 90 44 8B ? BA 01");
+            _getSuperWheelspinsAddress = await SmartAobScan(D("kwPRZLEO60mYG858vRn0XZ8byW+oa5dJmBu0ZKgR9FaHBNFjqGjnSZMD0WOoEfRWhw/JfLBq9FaHBNFjqBrsSZ950WOoEfRWhwTRY6hr7EmYG858tw7rSZ4L0Wi8DuwrhwTRHskO5Fg="));
         }
 
         if (_getSuperWheelspinsAddress == 0)
@@ -158,12 +207,12 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
     {
         if (_getRewardsAddress == 0)
         {
-            _getRewardsAddress = await SmartAobScan("48 89 ? ? ? 57 48 83 EC ? 33 FF E8 ? ? ? ? 48 8B ? 48 8B ? FF 52");
+            _getRewardsAddress = await SmartAobScan(D("kwPRZLEO60mYG858vRn0XZ8byW+oa5dJmBvCb6hokkniA9FjqBH0VocE0WiwDuwrhwTRaLAO7CuHBNEazg7hWw=="));
         }
 
         if (_getPerkPrizeAddress == 0)
         {
-            _getPerkPrizeAddress = await SmartAobScan("48 89 ? ? ? 57 48 83 EC ? 48 8B ? 48 8B ? E8 ? ? ? ? 83 E8");
+            _getPerkPrizeAddress = await SmartAobScan(D("kwPRZLEO60mYG858vRn0XZ8byW+oa5dJmBvFZKgWlkmYG8VkqBaWSZgbtGSoEfRWhwTRY6gW50niAw=="));
         }
         
         if (_getRewardsAddress == 0 || _getPerkPrizeAddress == 0)
@@ -227,7 +276,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
          * Long sig (RVA Steam v1.638: 0x02B46BF8):
          * 8B 0C ? 89 8D ? ? ? ? 4D 8B ? 0F 57 ? F3 0F ? ? ? 49 8B ? ? ? ? ? 48 85 ? 74 ? 8B 42 ? 85 C0 74 ? 90 8D 48 ? F0 0F ? ? ? 74 ? 85 C0 75 ? EB ? 49 8B ? ? ? ? ? 48 89 ? ? 49 8B ? ? ? ? ? 48 89 ? ? 8B 95 ? ? ? ? 48 8B ? ? E8 ? ? ? ? 84 C0 40 0F ? ? 48 8B ? ? 48 85 ? 74 ? B8 ? ? ? ? F0 0F ? ? ? 83 F8 ? 75 ? 48 8B ? ? 48 8B ? 48 8B ? FF 10 B8 ? ? ? ? F0 0F ? ? ? 83 F8 ? 75 ? 48 8B ? ? 48 8B ? FF 50 ? 40 84 ? 74 ? 48 8B ? ? ? 48 3B ? ? ? 74 ? 8B 85 ? ? ? ? 89 02 48 83 44 24 58
          */
-        _emoteAddress = await (SmartAobScan("8B 0C B8 89 8D B0 00 00 00"));
+        _emoteAddress = await (SmartAobScan(D("n3nRbMsOllGHA8h8sGr0K5cbwWyoHuRJlws=")));
         if (_emoteAddress == 0)
         {
             ShowError("Emote", "_emoteAddress == 0");
@@ -260,7 +309,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _creditsAddress = 0;
         CreditsDetourAddress = 0;
         
-        const string sig = "E8 ? ? ? ? 89 84 ? ? ? ? ? 4C 8D ? ? ? ? ? 48 8B";
+        var sig = D("4gPRY6gR9FaHBNFksQ7sXYcE0WOoEfRWhwTRaMsO7C2HBNFjqBH0VocE0WiwDuwr");
         _creditsAddress = await SmartAobScan(sig);
 
         if (_creditsAddress > 0)
@@ -297,7 +346,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _xpAddress = 0;
         XpDetourAddress = 0;
 
-        const string sig = "44 89 ? ? 8B 89 ? ? ? ? 85 C9";
+        var sig = D("kw/RZLEO60mYG8keqBbtSZgbzny3DutJnw7RH7E=");
         _xpPointsAddress = await SmartAobScan(sig) + 4;
         if (_xpPointsAddress > 4)
         {
@@ -334,7 +383,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _spinsAddress = 0;
         SpinsDetourAddress = 0;
 
-        const string sig = "48 89 5C 24 08 57 48 83 EC 20 48 8B FA 33 D2 48 8B 4F 10";
+        var sig = D("kwPRZLEO4SqHCcV8uBb0XJAbxWSoFudJ4njRbrgO4FGHA7N8zm/0WpQbtW6oGuxJn3nRaM4O5Vk=");
         _spinsAddress = await SmartAobScan(sig) + 28;
 
         if (_spinsAddress > 28)
@@ -364,7 +413,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _skillPointsAddress = 0;
         SkillPointsDetourAddress = 0;
 
-        const string sig = "85 D2 78 32 48 89 5C 24 08 57 48 83 EC 20 8B DA 48 8B F9 48 8B 49 48";
+        var sig = D("nw7RGLoO41GHCMN8vBb0UZ4bxB+oHOBJlwPRab8O4FGHA8J8zW30W5cbyR6oapVJkwPRZMoOklCHD8l8sGz0XZ4bxWQ=");
         _skillPointsAddress = await SmartAobScan(sig) + 34;
 
         if (_skillPointsAddress > 34)
@@ -394,7 +443,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _bxmlEncryptionAddress = 0;
         BxmlEncryptionDetourAddress = 0;
 
-        const string sig = "48 89 5C 24 08 57 48 83 EC 20 48 8B 79 08 33 D2 48";
+        var sig = D("kwPRZLEO4SqHCcV8uBb0XJAbxWSoFudJ4njRbrgO4FGHA7N8vxf0WZ8bwm+oauZJkwM=");
         _bxmlEncryptionAddress = await SmartAobScan(sig) + 29;
 
         if (_bxmlEncryptionAddress > 29)
@@ -427,7 +476,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _seasonalAddress = 0;
         SeasonalDetourAddress = 0;
 
-        const string sig = "49 63 ? 8B 44 ? ? C3";
+        var sig = D("kwLRarsO60mfedFovA7rSZgbsm8=");
         _seasonalAddress = await SmartAobScan(sig);
 
         if (_seasonalAddress > 0)
@@ -457,7 +506,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _seriesAddress = 0;
         SeriesDetourAddress = 0;
 
-        const string sig = "89 59 ? 48 83 C4 ? 5B C3 CC CC CC CC CC 44 89";
+        var sig = D("nwLRabEO60mTA9Fkuw6XXYcE0WnKDpdah3iyfMtt9CrkG7IfqG2XSZMP0WSx");
         _seriesAddress = await SmartAobScan(sig);
 
         if (_seriesAddress > 0)
@@ -489,7 +538,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _clothing2Address = 0;
         Clothing2DetourAddress = 0;
 
-        const string clothing1Sig = "48 8B ? ? ? 8B 88 ? ? ? ? 39 4B";
+        var clothing1Sig = D("kwPRZMoO60mYG858sGz0UZ8bzny3DutJmBvCZagalg==");
         _clothing1Address = await SmartAobScan(clothing1Sig) + 5;
 
         if (_clothing1Address > 5)
@@ -515,7 +564,7 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
             return;
         }
         
-        const string clothing2Sig = "8B B8 ? ? ? ? 0F B6 ? ? ? ? ? 49 8B";
+        var clothing2Sig = D("n3nRHrAO60mYG858tw7kL4d5x3y3DutJmBvOfLcO4FCHA7M=");
         _clothing2Address = await SmartAobScan(clothing2Sig);
         if (_clothing2Address > 0)
         {

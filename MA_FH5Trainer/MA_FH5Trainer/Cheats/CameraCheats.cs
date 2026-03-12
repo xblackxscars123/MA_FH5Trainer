@@ -1,7 +1,61 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
 ﻿using static MA_FH5Trainer.Resources.Cheats;
 using static MA_FH5Trainer.Resources.Memory;
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CameraCheats.cs
 
 public class CameraCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {
@@ -34,7 +88,7 @@ public class CameraCheats : CheatsUtilities, ICheatsBase, IRevertBase
         var minRange = processMainModule.BaseAddress;
         var maxRange = minRange + processMainModule.ModuleMemorySize;
 
-        const string chaseSig = "90 40 CD CC 8C 40 1F 85 2B 3F 00 00 00 40";
+        var chaseSig = D("ngvRaLgOly2HeLJ8sG30XZcbwBqoFuFJlXnRb84O5FmHC8F8uB70XZc=");
         var chaseList = await GetInstance().AoBScan(minRange, maxRange, chaseSig, true);
         var chaseEnumerable = chaseList as UIntPtr[] ?? chaseList.ToArray();
         if (chaseEnumerable.Length != 2)
@@ -50,7 +104,7 @@ public class CameraCheats : CheatsUtilities, ICheatsBase, IRevertBase
         var newScanStart = (long)(ChaseAddress - 0x1000);
         var newScanEnd = (long)(ChaseAddress + 0x1000);
         
-        const string driverHoodSig = "CD CC 4C 3E 00 50 43 47 00 00 34 42 00 00 20";
+        var driverHoodSig = D("5H/RH8sO4CqHCLR8uB70XJcbxW+oGuNJlwvRbLgO512HD8N8uB70WZcbw2w=");
         var driverHoodList = await GetInstance().AoBScan(newScanStart, newScanEnd, driverHoodSig, true);
         var driverHoodEnumerable = driverHoodList as UIntPtr[] ?? driverHoodList.ToArray();
         if (driverHoodEnumerable.Length != 2)
@@ -63,7 +117,7 @@ public class CameraCheats : CheatsUtilities, ICheatsBase, IRevertBase
         DriverAddress = driverHoodEnumerable.LastOrDefault() - 0x24;
         ++successCount;
 
-        const string bumperSig = "00 CD CC 4C 3E ? ? ? 47 00 ? 54";
+        var bumperSig = D("lwvRH8wOlyqHD7J8u2v0VocE0WOoGuNJlwvRY6gb4A==");
         var bumperList = await GetInstance().AoBScan(newScanStart, newScanEnd, bumperSig, true);
         var bumperEnumerable = bumperList as UIntPtr[] ?? bumperList.ToArray();
         if (bumperEnumerable.Length == 0)
@@ -84,7 +138,7 @@ public class CameraCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _cameraAddress = 0;
         CameraDetourAddress = 0;
 
-        const string sig = "0F 10 ? B0 ? 0F 28 ? ? ? F3 0F";
+        var sig = D("l33RbbgO60nlC9FjqB6SSZUD0WOoEfRWh33CfLho");
         _cameraAddress = await SmartAobScan(sig);
 
         if (_cameraAddress > 0)

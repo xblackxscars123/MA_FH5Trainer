@@ -1,8 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Pages/TuningViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Pages/TuningViewModel.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Pages/TuningViewModel.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Pages/TuningViewModel.cs
 
-namespace MA_FH5Trainer.ViewModels.Pages;
+namespace XPaint.ViewModels.Pages;
 
 public partial class TuningViewModel : ObservableObject
 {
@@ -15,7 +23,7 @@ public partial class TuningViewModel : ObservableObject
     [ObservableProperty]
     private bool _areScanningUiElementsVisible;
 
-    private static TuningCheats TuningCheatsFh5 => Resources.Cheats.GetClass<TuningCheats>();
+    private static TuningCheats TuningCheatsInst => Resources.Cheats.GetClass<TuningCheats>();
     
     [RelayCommand]
     private async Task Scan()
@@ -23,12 +31,12 @@ public partial class TuningViewModel : ObservableObject
         AreScanPromptUiElementsEnabled = false;
         AreScanningUiElementsVisible = true;
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
-            await TuningCheatsFh5.Scan();
+            await TuningCheatsInst.Scan();
         }
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             AreScanPromptUiElementsEnabled = true;
             AreScanningUiElementsVisible = false;

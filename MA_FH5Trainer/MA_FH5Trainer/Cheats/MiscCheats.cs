@@ -1,7 +1,59 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
 ﻿using static MA_FH5Trainer.Resources.Cheats;
 using static MA_FH5Trainer.Resources.Memory;
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/MiscCheats.cs
 
 public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {
@@ -47,7 +99,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _nameAddress = 0;
         NameDetourAddress = 0;
 
-        const string sig = "90 48 8B ? ? EB ? 48 8D ? ? 48 89";
+        var sig = D("ngvRaLAO7CuHBNFjqGuWSZgbxWSoFpBJmBvOfLwW9FGe");
         _nameAddress = await SmartAobScan(sig);
         
         if (_nameAddress > 0)
@@ -84,7 +136,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
 
     private static async Task<UIntPtr> CheatNamePtr()
     {
-        const string sig = "E8 ? ? ? ? 4C 8B ? 48 8B ? 41 FF ? ? 48 8B ? 48 85 ? 74 ? 48 8B ? 48 8B ? FF 90";
+        var sig = D("4gPRY6gR9FaHBNFoyw7sK4cE0WiwDuwrhwTRaLkOki+HBNFjqBrsSZ950WOoGuxJnw7RY6gZ4EmYG8VkqBaWSZgbxWSoFpZJmBu3GqgX5A==");
         var scanResult = (IntPtr)await SmartAobScan(sig);
 
         if (scanResult > 0)
@@ -106,7 +158,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _prizeScaleAddress = 0;
         PrizeScaleDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? 33 D2 48 8B ? ? E8 ? ? ? ? 90 48 85 ? 74 ? 8B C5";
+        var sig = D("4QjRbM4O60mYG858ux30LZUbxWSoFpZJmBvOfM0W9FaHBNFjqBH0UJcbxWSoFuFJmBvGaKgR9FHlG7Jp");
         _prizeScaleAddress = await SmartAobScan(sig);
 
         if (_prizeScaleAddress > 0)
@@ -136,7 +188,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _sellFactorAddress = 0;
         SellFactorDetourAddress = 0;
 
-        const string sig = "44 8B ? ? ? ? ? 33 D2 48 8B ? ? ? ? ? E8 ? ? ? ? 90";
+        var sig = D("kw/RZMoO60mYG858tw7rSZQI0Ri6DuBRhwOzfLcO60mYG858tw6RUYcE0WOoEfRWhwLB");
         _sellFactorAddress = await SmartAobScan(sig);
 
         if (_sellFactorAddress > 0)
@@ -166,7 +218,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _skillScoreMultiplierAddress = 0;
         SkillScoreMultiplierDetourAddress = 0;
         
-        const string sig = "8B 78 ? 48 8B ? ? 48 85 ? 74 ? 41 8B";
+        var sig = D("n3nRa7AO60mTA9Fkyg7rSZgbxWSoFuFJmBvGaKgR9F2WG8ke");
         _skillScoreMultiplierAddress = await SmartAobScan(sig);
 
         if (_skillScoreMultiplierAddress > 0)
@@ -196,7 +248,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _driftScoreMultiplierAddress = 0;
         DriftScoreMultiplierDetourAddress = 0;
         
-        const string sig = "E8 ? ? ? ? F3 0F ? ? 0F 28 ? ? ? 0F 28";
+        var sig = D("4gPRY6gR9FaHBNEauw7kL4cE0WOoHpJJlQPRY6gR9FaHC7d8uhY=");
         _driftScoreMultiplierAddress = await SmartAobScan(sig) + 5;
 
         if (_driftScoreMultiplierAddress > 5)
@@ -226,7 +278,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _skillTreeWideEditAddress = 0;
         SkillTreeWideEditDetourAddress = 0;
         
-        const string sig = "40 ? 48 83 EC ? 48 8B ? ? 33 D2 0F 29";
+        var sig = D("kwvRY6ga7EmfCNEZyw7rSZMD0WTKDutJmBvCb6hq5kmXfdFusQ==");
         _skillTreeWideEditAddress = await SmartAobScan(sig) + 32;
 
         if (_skillTreeWideEditAddress > 32)
@@ -256,7 +308,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _skillTreePerksCostAddress = 0;
         SkillTreePerksCostDetourAddress = 0;
         
-        const string sig = "48 89 5C 24 08 57 48 83 EC 20 48 8B 79 18 33 D2 48 8B 4F 28";
+        var sig = D("kwPRZLEO4SqHCcV8uBb0XJAbxWSoFudJ4njRbrgO4FGHA7N8vxf0WJ8bwm+oauZJkwPRZMoO4C+HCck=");
         _skillTreePerksCostAddress = await SmartAobScan(sig) + 29;
 
         if (_skillTreePerksCostAddress > 29)
@@ -286,7 +338,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _missionTimeScaleAddress = 0;
         MissionTimeScaleDetourAddress = 0;
         
-        const string sig = "F3 0F ? ? F3 0F ? ? ? ? ? ? 0F 2F ? 0F 87 ? ? ? ? C7 ? ? ? ? ? 00 00 00 00";
+        var sig = D("4QjRbM4O60mYG7dvqB6SSZgbzny3DutJmBvOfLho9FvhG858uGj0UZAbzny3DutJmBuya6gR9FaHBNFjqBH0WZcbwWyoHuRJlws=");
         _missionTimeScaleAddress = await SmartAobScan(sig);
 
         if (_missionTimeScaleAddress > 0)
@@ -316,7 +368,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _speedZoneMultiplierAddress = 0;
         SpeedZoneMultiplierDetourAddress = 0;
         
-        const string sig = "F3 41 ? ? ? ? ? ? ? 0F 28 ? 0F 28 ? ? ? 48 83 C4";
+        var sig = D("4QjRaLkO60mYG858tw7rSZgbzny4aPRbnxvOfLho9FufG858tw7rSZMD0WS7Dpdd");
         _speedZoneMultiplierAddress = await SmartAobScan(sig);
 
         if (_speedZoneMultiplierAddress > 0)
@@ -346,7 +398,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _trailblazerTimeScaleAddress = 0;
         TrailblazerTimeScaleDetourAddress = 0;
         
-        const string sig = "F3 0F ? ? F3 0F ? ? ? ? ? ? 4C 8D ? ? ? ? ? F3 0F ? ? 33 D2";
+        var sig = D("4QjRbM4O60mYG7dvqB6SSZgbzny3DutJmBvOfLxt9FHjG858tw7rSZgbznzOHfRZ4RvOfLcO51qHf8M=");
         _trailblazerTimeScaleAddress = await SmartAobScan(sig);
 
         if (_trailblazerTimeScaleAddress > 0)
@@ -376,7 +428,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _unbreakableSkillScoreAddress = 0;
         UnbreakableSkillScoreDetourAddress = 0;
         
-        const string sig = "0F B6 ? 40 38 ? ? ? ? ? 74 ? 84 C0";
+        var sig = D("l33RHr4O60mTC9FvsA7rSZgbzny3DutJkA/RY6gW4EnkCw==");
         _unbreakableSkillScoreAddress = await SmartAobScan(sig);
 
         if (_unbreakableSkillScoreAddress > 0)
@@ -406,7 +458,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _raceTimeScaleAddress = 0;
         RaceTimeScaleDetourAddress = 0;
 
-        const string sig = "40 ? 48 83 EC ? 48 8B ? 48 8B ? 0F 29 ? ? ? 0F 28 ? FF 50 ? 0F 57";
+        var sig = D("kwvRY6ga7EmfCNEZyw7rSZMD0WTKDutJkwPRZMoO60mXfdFusQ7rSZgbzny4aPRbnxvOfM5o9FyXG858uGj0XJA=");
         _raceTimeScaleAddress = await SmartAobScan(sig) + 29;
 
         if (_raceTimeScaleAddress > 29)
@@ -415,7 +467,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
             {
                 await GetClass<Bypass>().DisableCrcChecks();
             }
-
+            
             if (GetClass<Bypass>().CallAddress <= 3) return;
             
             var asm = new byte[]
@@ -437,7 +489,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _removeBuildCapAddress = 0;
         RemoveBuildCapDetourAddress = 0;
         
-        const string sig = "E8 ? ? ? ? F3 0F ? ? ? 48 8B ? ? ? 48 8B";
+        var sig = D("4gPRY6gR9FaHBNEauw7kL4cE0WOoEfRdnxvJHqgR9FaHBNFosA7sKw==");
         _removeBuildCapAddress = await SmartAobScan(sig) + 5;
 
         if (_removeBuildCapAddress > 5)
@@ -470,7 +522,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _dangerSign3Address = 0;
         DangerSign3DetourAddress = 0;
         
-        const string dangerSign1Sig = "0F 51 ? F3 0F ? ? ? ? ? ? 0F 28 ? 48 8B";
+        var dangerSign1Sig = D("l33RabkO60nhCNFszg7rSZgbzny3DutJmBvBGqgc7EmYG8VkqBaW");
         _dangerSign1Address = await SmartAobScan(dangerSign1Sig) + 3;
         if (_dangerSign1Address > 3)
         {
@@ -499,7 +551,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         var newScanStart = _dangerSign1Address - 0x1000;
         var newScanEnd = _dangerSign1Address + 0x1000;
         
-        const string dangerSign2Sig = "0F 29 ? ? ? 49 8B ? 49 8B ? 48 8B ? ? ? ? ? 48 85";
+        var dangerSign2Sig = D("l33RbrEO60mYG858vBf0UeUbzny8FvRR5RvOfLwW9FHlG858tw7rSZgbzny8FvRRkg==");
         _dangerSign2Address = await SmartAobScan(dangerSign2Sig, newScanStart, newScanEnd);
         if (_dangerSign2Address > 0)
         {
@@ -526,7 +578,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         }
         
         
-        const string dangerSign3Sig = "0F 29 ? ? ? 49 8B ? 48 8B ? ? ? ? ? 48 85";
+        var dangerSign3Sig = D("l33RbrEO60mYG858vBf0UeUbzny8FvRR5RvOfLcO60mYG858vBb0UZI=");
         _dangerSign3Address = await SmartAobScan(dangerSign3Sig, newScanStart, newScanEnd);
         if (_dangerSign3Address > 0)
         {
@@ -557,7 +609,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _speedTrapMultiplierAddress = 0;
         SpeedTrapMultiplierDetourAddress = 0;
 
-        const string sig = "0F 29 ? ? ? 48 8B ? 48 8B ? ? ? ? ? 48 85 ? 74";
+        var sig = D("l33RbrEO60mYG858vBb0UeUbzny8FvRR5RvOfLcO60mYG858vBb0UZIbzny/Gg==");
         _speedTrapMultiplierAddress = await SmartAobScan(sig);
         if (_speedTrapMultiplierAddress > 0)
         {
@@ -587,7 +639,7 @@ public class MiscCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _droneModeMaxHeightMultiAddress = 0;
         DroneModeMaxHeightMultiDetourAddress = 0;
 
-        const string sig = "0F 57 ? 41 0F ? ? 73 ? 0F 28 ? 0F 57 ? F3 0F ? ? ? ? F3 0F";
+        var sig = D("l33Rab8O60mTCtFszg7rSZgbxm+oEfRZ4RvDZKgR9FnhG8RrqBH0L5QbwRqoEfRWhwTRY6ho50mXfQ==");
         _droneModeMaxHeightMultiAddress = await SmartAobScan(sig);
         if (_droneModeMaxHeightMultiAddress > 0)
         {

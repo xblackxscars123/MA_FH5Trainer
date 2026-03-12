@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
 
-namespace MA_FH5Trainer.Converters;
+namespace XPaint.Converters;
 
 public class IntParamConverter : IMultiValueConverter
 {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MA_FH5Trainer.Services;
+namespace XPaint.Services;
 
 public static class WindowsProviderService
 {

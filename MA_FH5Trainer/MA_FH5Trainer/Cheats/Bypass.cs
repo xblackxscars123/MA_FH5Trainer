@@ -1,6 +1,53 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
 ﻿using static MA_FH5Trainer.Resources.Memory;
+=======
+﻿using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+﻿using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
+=======
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/Bypass.cs
 
 public class Bypass : CheatsUtilities, ICheatsBase
 {
@@ -22,7 +69,7 @@ public class Bypass : CheatsUtilities, ICheatsBase
             m_scanning = true;
         }
         
-        var callAddress = await SmartAobScan("4C 3B ? 0F 95 ? 0F 94");
+        var callAddress = await SmartAobScan(D("k3jRb8oO60mXfdFlvQ7rSZd90WW8"));
         if (callAddress == 0)
         {
             ShowError("CRC", "CallAddress == 0");

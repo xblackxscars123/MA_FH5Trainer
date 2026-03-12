@@ -1,10 +1,18 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Views.Windows;
-using static MA_FH5Trainer.Resources.Memory;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+using XPaint.Views.Windows;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.Tuning;
+namespace XPaint.Views.SubPages.Tuning;
 
 public partial class Alignment
 {
@@ -17,9 +25,17 @@ public partial class Alignment
     }
     
     public MainWindow MainWindow { get; }
-    private static TuningCheats TuningCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<TuningCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+    private static TuningCheats TuningCheatsFh5 => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Alignment.xaml.cs
     private static readonly int[] Offsets = [0x8B0, 0x0];
-    private static UIntPtr Ptr => GetInstance().FollowMultiLevelPointer(TuningCheatsFh5.Base1, Offsets);
+    private static UIntPtr Ptr => GetInstance().FollowMultiLevelPointer(TuningCheatsInst.Base1, Offsets);
 
     private async void Scan_OnClick(object sender, RoutedEventArgs e)
     {
@@ -27,12 +43,12 @@ public partial class Alignment
         MainWindow.ViewModel.TuningScanToBeDone = false;
         MainWindow.ViewModel.TuningScanInProgress = true;
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
-            await TuningCheatsFh5.Scan();
+            await TuningCheatsInst.Scan();
         }
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             MainWindow.ViewModel.TuningScanSuccess = false;
             MainWindow.ViewModel.TuningScanToBeDone = true;
@@ -47,7 +63,7 @@ public partial class Alignment
     
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
     {
-        if (ComboBox == null || ValueBox == null || !TuningCheatsFh5.WasScanSuccessful)
+        if (ComboBox == null || ValueBox == null || !TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }
@@ -64,7 +80,7 @@ public partial class Alignment
 
     private void ValueBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }
@@ -75,25 +91,25 @@ public partial class Alignment
             case 0:
             {
                 GetInstance().WriteMemory(Ptr + TuningOffsets.CamberNegOffset, newValue);                
-                GetInstance().WriteMemory(TuningCheatsFh5.Base4, newValue);                
+                GetInstance().WriteMemory(TuningCheatsInst.Base4, newValue);                
                 break;
             }
             case 1:
             {
                 GetInstance().WriteMemory(Ptr + TuningOffsets.CamberPosOffset, newValue);                
-                GetInstance().WriteMemory(TuningCheatsFh5.Base4 + 0x4, newValue);                
+                GetInstance().WriteMemory(TuningCheatsInst.Base4 + 0x4, newValue);                
                 break;
             }
             case 2:
             {
                 GetInstance().WriteMemory(Ptr + TuningOffsets.ToeNegOffset, newValue);                
-                GetInstance().WriteMemory(TuningCheatsFh5.Base4 + 0x8, newValue);                
+                GetInstance().WriteMemory(TuningCheatsInst.Base4 + 0x8, newValue);                
                 break;
             }
             case 3:
             {
                 GetInstance().WriteMemory(Ptr + TuningOffsets.ToePosOffset, newValue);                
-                GetInstance().WriteMemory(TuningCheatsFh5.Base4 + 0xC, newValue);                
+                GetInstance().WriteMemory(TuningCheatsInst.Base4 + 0xC, newValue);                
                 break;
             }
         }
@@ -101,7 +117,7 @@ public partial class Alignment
 
     private void ComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (ValueBox == null || !TuningCheatsFh5.WasScanSuccessful)
+        if (ValueBox == null || !TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }

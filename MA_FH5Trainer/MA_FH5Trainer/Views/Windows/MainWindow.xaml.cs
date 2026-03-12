@@ -4,11 +4,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using MA_FH5Trainer.Resources.Keybinds;
-using MA_FH5Trainer.Resources.Theme;
-using MA_FH5Trainer.ViewModels.Windows;
+using XPaint.Resources.Keybinds;
+using XPaint.Resources.Theme;
+using XPaint.ViewModels.Windows;
 
-namespace MA_FH5Trainer.Views.Windows;
+namespace XPaint.Views.Windows;
 
 public partial class MainWindow
 {

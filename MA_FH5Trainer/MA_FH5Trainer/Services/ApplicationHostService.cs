@@ -1,12 +1,12 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 using ControlzEx.Theming;
-using MA_FH5Trainer.Resources.Theme;
-using MA_FH5Trainer.Views.Windows;
+using XPaint.Resources.Theme;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
 using Microsoft.Extensions.Hosting;
 
-namespace MA_FH5Trainer.Services;
+namespace XPaint.Services;
 
 public class ApplicationHostService(IServiceProvider serviceProvider) : IHostedService
 {

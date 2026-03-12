@@ -1,4 +1,46 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
 ﻿namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+﻿using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.ForzaHorizon5;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
+=======
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/CustomizationCheats.cs
 
 public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {
@@ -16,7 +58,7 @@ public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _paintAddress = 0;
         PaintDetourAddress = 0;
 
-        const string sig = "0F 11 ? C6 ? ? ? 49";
+        var sig = D("l33RbbkO60nkDdFjqBH0VocPyA==");
         _paintAddress = await SmartAobScan(sig);
         
         if (_paintAddress > 0)
@@ -47,7 +89,7 @@ public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _headlightColourAddress = 0;
         HeadlightColourDetourAddress = 0;
 
-        const string sig = "0F 10 ? ? F3 44 ? ? ? ? ? ? ? 83 7B 48";
+        var sig = D("l33RbbgO60mYG7dvqBrgSZgbzny3DutJmBvOfLcO7FqHDLN8vBY=");
         _headlightColourAddress = await SmartAobScan(sig);
         
         if (_headlightColourAddress > 0)
@@ -77,7 +119,7 @@ public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _cleanlinessAddress = 0;
         CleanlinessDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? ? ? ? F3 0F ? ? ? ? B9 ? ? ? ? E8";
+        var sig = D("4QjRbM4O60mYG858tw7rSZgbt2+oHpJJmBvOfLcO60nlAtFjqBH0VocE0Rmw");
         _cleanlinessAddress = await SmartAobScan(sig);
 
         if (_cleanlinessAddress > 0)
@@ -108,7 +150,7 @@ public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _backfireTimeAddress = 0;
         BackfireTimeDetourAddress = 0;
 
-        const string sig = "F3 0F ? ? ? ? ? ? E8 ? ? ? ? 0F 28 ? F3 0F ? ? ? ? ? ? 48 8B";
+        var sig = D("4QjRbM4O60mYG858tw7rSZgbtGSoEfRWhwTRY6gekkmVA9FjqGjnSZd90WOoEfRWhwTRY6gR9F2fG8ke");
         _backfireTimeAddress = await SmartAobScan(sig);
 
         if (_backfireTimeAddress > 0)

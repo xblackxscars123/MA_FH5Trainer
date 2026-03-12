@@ -1,14 +1,22 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/PhotoMode.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/PhotoMode.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/PhotoMode.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/PhotoMode.xaml.cs
+using XPaint.Models;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class PhotoMode
 {
@@ -21,7 +29,7 @@ public partial class PhotoMode
     }
 
     public PhotoModeViewModel ViewModel { get; }
-    private static PhotomodeCheats PhotomodeCheatsFh5 => GetClass<PhotomodeCheats>();
+    private static PhotomodeCheats PhotomodeCheatsInst => GetClass<PhotomodeCheats>();
 
     private async void NoClipSwitch_OnToggled(object sender, RoutedEventArgs e)
     {
@@ -31,13 +39,13 @@ public partial class PhotoMode
         }
 
         toggleSwitch.IsEnabled = false;
-        if (PhotomodeCheatsFh5.NoClipDetourAddress == 0)
+        if (PhotomodeCheatsInst.NoClipDetourAddress == 0)
         {
-            await PhotomodeCheatsFh5.CheatNoClip();
+            await PhotomodeCheatsInst.CheatNoClip();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (PhotomodeCheatsFh5.NoClipDetourAddress == 0)
+        if (PhotomodeCheatsInst.NoClipDetourAddress == 0)
         {
             toggleSwitch.Toggled -= NoClipSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -45,7 +53,7 @@ public partial class PhotoMode
             return;
         }
                 
-        GetInstance().WriteMemory(PhotomodeCheatsFh5.NoClipDetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(PhotomodeCheatsInst.NoClipDetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private async void NoHeightLimitsSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -56,13 +64,13 @@ public partial class PhotoMode
         }
         
         toggleSwitch.IsEnabled = false;
-        if (PhotomodeCheatsFh5.NoHeightLimitDetourAddress == 0)
+        if (PhotomodeCheatsInst.NoHeightLimitDetourAddress == 0)
         {
-            await PhotomodeCheatsFh5.CheatNoHeightLimits();
+            await PhotomodeCheatsInst.CheatNoHeightLimits();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (PhotomodeCheatsFh5.NoHeightLimitDetourAddress == 0)
+        if (PhotomodeCheatsInst.NoHeightLimitDetourAddress == 0)
         {
             toggleSwitch.Toggled -= NoHeightLimitsSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -70,7 +78,7 @@ public partial class PhotoMode
             return;
         }
         
-        GetInstance().WriteMemory(PhotomodeCheatsFh5.NoHeightLimitDetourAddress + 0x24, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(PhotomodeCheatsInst.NoHeightLimitDetourAddress + 0x24, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private async void IncreasedZoomSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -81,13 +89,13 @@ public partial class PhotoMode
         }
         
         toggleSwitch.IsEnabled = false;
-        if (PhotomodeCheatsFh5.IncreasedZoomDetourAddress == 0)
+        if (PhotomodeCheatsInst.IncreasedZoomDetourAddress == 0)
         {
-            await PhotomodeCheatsFh5.CheatIncreasedZoom();
+            await PhotomodeCheatsInst.CheatIncreasedZoom();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (PhotomodeCheatsFh5.IncreasedZoomDetourAddress == 0)
+        if (PhotomodeCheatsInst.IncreasedZoomDetourAddress == 0)
         {
             toggleSwitch.Toggled -= IncreasedZoomSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -95,7 +103,7 @@ public partial class PhotoMode
             return;
         }
         
-        GetInstance().WriteMemory(PhotomodeCheatsFh5.IncreasedZoomDetourAddress + 0x21, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(PhotomodeCheatsInst.IncreasedZoomDetourAddress + 0x21, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private async void ModifiersScanButton_OnClick(object sender, RoutedEventArgs e)
@@ -103,39 +111,39 @@ public partial class PhotoMode
         ViewModel.AreScanPromptLimiterUiElementsVisible = false;
         ViewModel.AreScanningLimiterUiElementsVisible = true;
 
-        if (!PhotomodeCheatsFh5.WasModifiersScanSuccessful)
+        if (!PhotomodeCheatsInst.WasModifiersScanSuccessful)
         {
-            await PhotomodeCheatsFh5.CheatModifiers();
+            await PhotomodeCheatsInst.CheatModifiers();
         }
 
-        if (!PhotomodeCheatsFh5.WasModifiersScanSuccessful)
+        if (!PhotomodeCheatsInst.WasModifiersScanSuccessful)
         {
             ViewModel.AreScanPromptLimiterUiElementsVisible = true;
             ViewModel.AreScanningLimiterUiElementsVisible = false;
             return;
         }
         
-        ValueBox.Value = GetInstance().ReadMemory<int>(PhotomodeCheatsFh5.MainModifiersAddress);
+        ValueBox.Value = GetInstance().ReadMemory<int>(PhotomodeCheatsInst.MainModifiersAddress);
         ViewModel.AreScanningLimiterUiElementsVisible = false;
         ViewModel.AreModifierUiElementsVisible = true;
     }
 
     private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (sender is not ComboBox comboBox || !PhotomodeCheatsFh5.WasModifiersScanSuccessful)
+        if (sender is not ComboBox comboBox || !PhotomodeCheatsInst.WasModifiersScanSuccessful)
         {
             return;
         }
 
         ValueBox.Value = comboBox.SelectedIndex switch
         {
-            0 => GetInstance().ReadMemory<int>(PhotomodeCheatsFh5.MainModifiersAddress),
-            1 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.MainModifiersAddress + 0x20),
-            2 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.MainModifiersAddress + 0x30),
-            3 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.MainModifiersAddress + 0x38),
-            4 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.MainModifiersAddress + 0xC),
-            5 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.SpeedAddress),
-            6 => GetInstance().ReadMemory<float>(PhotomodeCheatsFh5.SpeedAddress + 0x4),
+            0 => GetInstance().ReadMemory<int>(PhotomodeCheatsInst.MainModifiersAddress),
+            1 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.MainModifiersAddress + 0x20),
+            2 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.MainModifiersAddress + 0x30),
+            3 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.MainModifiersAddress + 0x38),
+            4 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.MainModifiersAddress + 0xC),
+            5 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.SpeedAddress),
+            6 => GetInstance().ReadMemory<float>(PhotomodeCheatsInst.SpeedAddress + 0x4),
             _ => ValueBox.Value
         };
     }
@@ -144,13 +152,13 @@ public partial class PhotoMode
     {
         var address = GameVerPlat.GetInstance().Type switch
         {
-            GameVerPlat.GameType.Fh5 => PhotomodeCheatsFh5.MainModifiersAddress,
+            GameVerPlat.GameType.Default => PhotomodeCheatsInst.MainModifiersAddress,
             _ => throw new IndexOutOfRangeException()
         };
 
         var speedAddress = GameVerPlat.GetInstance().Type switch
         {
-            GameVerPlat.GameType.Fh5 => PhotomodeCheatsFh5.SpeedAddress,
+            GameVerPlat.GameType.Default => PhotomodeCheatsInst.SpeedAddress,
             _ => throw new IndexOutOfRangeException()
         };
         

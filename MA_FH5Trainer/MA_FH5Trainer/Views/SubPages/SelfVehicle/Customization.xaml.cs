@@ -3,15 +3,23 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Customization.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Customization.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Customization.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Customization.xaml.cs
+using XPaint.Models;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class Customization
 {
@@ -26,7 +34,7 @@ public partial class Customization
     
     public MainWindow MainWindow { get; }
     public CustomizationViewModel ViewModel { get; }
-    private static CustomizationCheats CustomizationCheatsFh5 => GetClass<CustomizationCheats>();
+    private static CustomizationCheats CustomizationCheatsInst => GetClass<CustomizationCheats>();
 #if false
     private async void MainSwitch_OnToggled(object sender, RoutedEventArgs e)
     {
@@ -46,12 +54,12 @@ public partial class Customization
         {
             case 0:
             {
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
-                    await CustomizationCheatsFh5.CheatCleanliness();
+                    await CustomizationCheatsInst.CheatCleanliness();
                 }
 
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
                     toggleSwitch.Toggled -= MainSwitch_OnToggled;
                     toggleSwitch.IsOn = false;
@@ -60,18 +68,18 @@ public partial class Customization
                 }
                 
                 ViewModel.DirtEnabled = toggleSwitch.IsOn;
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x37, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x38, Convert.ToSingle(MainSlider.Value));
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x37, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x38, Convert.ToSingle(MainSlider.Value));
                 break;
             }
             case 1:
             {
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
-                    await CustomizationCheatsFh5.CheatCleanliness();
+                    await CustomizationCheatsInst.CheatCleanliness();
                 }
 
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
                     toggleSwitch.Toggled -= MainSwitch_OnToggled;
                     toggleSwitch.IsOn = false;
@@ -80,8 +88,8 @@ public partial class Customization
                 }   
                 
                 ViewModel.MudEnabled = toggleSwitch.IsOn;
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x3C, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x3D, Convert.ToSingle(MainSlider.Value));
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x3C, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x3D, Convert.ToSingle(MainSlider.Value));
                 break;
             }
         } 
@@ -95,13 +103,13 @@ public partial class Customization
         }
 
         toggleSwitch.IsEnabled = false;
-        if (CustomizationCheatsFh5.HeadlightColourDetourAddress == 0)
+        if (CustomizationCheatsInst.HeadlightColourDetourAddress == 0)
         {
-            await CustomizationCheatsFh5.CheatHeadlightColour();
+            await CustomizationCheatsInst.CheatHeadlightColour();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (CustomizationCheatsFh5.HeadlightColourDetourAddress == 0)
+        if (CustomizationCheatsInst.HeadlightColourDetourAddress == 0)
         {
             toggleSwitch.Toggled -= HeadlightSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -112,8 +120,8 @@ public partial class Customization
         ViewModel.AreHeadlightUiElementsEnabled = toggleSwitch.IsOn;
         var toggled = toggleSwitch.IsOn ? (byte)1 : (byte)0;
         var write = ConvertUiColorToGameValues((Color)ColorPicker.SelectedColor!);
-        GetInstance().WriteMemory(CustomizationCheatsFh5.HeadlightColourDetourAddress + 0x22, toggled);
-        GetInstance().WriteMemory(CustomizationCheatsFh5.HeadlightColourDetourAddress + 0x23, write);
+        GetInstance().WriteMemory(CustomizationCheatsInst.HeadlightColourDetourAddress + 0x22, toggled);
+        GetInstance().WriteMemory(CustomizationCheatsInst.HeadlightColourDetourAddress + 0x23, write);
     }
     
     private void ColorPickerBase_OnSelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
@@ -123,13 +131,13 @@ public partial class Customization
             return;
         }
 
-        if (CustomizationCheatsFh5.HeadlightColourDetourAddress == 0)
+        if (CustomizationCheatsInst.HeadlightColourDetourAddress == 0)
         {
             return;
         }
         
         var write = ConvertUiColorToGameValues(e.NewValue.GetValueOrDefault());
-        GetInstance().WriteMemory(CustomizationCheatsFh5.HeadlightColourDetourAddress + 0x23, write);
+        GetInstance().WriteMemory(CustomizationCheatsInst.HeadlightColourDetourAddress + 0x23, write);
     }
 
     private static Vector3 ConvertUiColorToGameValues(Color uiColor)
@@ -148,23 +156,23 @@ public partial class Customization
             case 0:
             {
                 ViewModel.DirtValue = Convert.ToSingle(e.NewValue);
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x38, ViewModel.DirtValue);
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x38, ViewModel.DirtValue);
                 break;
             }
             case 1:
             {
                 ViewModel.MudValue = Convert.ToSingle(e.NewValue);
-                if (CustomizationCheatsFh5.CleanlinessDetourAddress == 0)
+                if (CustomizationCheatsInst.CleanlinessDetourAddress == 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(CustomizationCheatsFh5.CleanlinessDetourAddress + 0x3D, ViewModel.MudValue);
+                GetInstance().WriteMemory(CustomizationCheatsInst.CleanlinessDetourAddress + 0x3D, ViewModel.MudValue);
                 break;
             }
         }
@@ -219,13 +227,13 @@ public partial class Customization
         }
 
         toggleSwitch.IsEnabled = false;
-        if (CustomizationCheatsFh5.BackfireTimeDetourAddress == 0)
+        if (CustomizationCheatsInst.BackfireTimeDetourAddress == 0)
         {
-            await CustomizationCheatsFh5.CheatBackfireTime();
+            await CustomizationCheatsInst.CheatBackfireTime();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (CustomizationCheatsFh5.BackfireTimeDetourAddress == 0)
+        if (CustomizationCheatsInst.BackfireTimeDetourAddress == 0)
         {
             toggleSwitch.Toggled -= BackfireSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -234,29 +242,29 @@ public partial class Customization
         }
         
         ViewModel.AreBackfireUiElementsEnabled = toggleSwitch.IsOn;
-        GetInstance().WriteMemory(CustomizationCheatsFh5.BackfireTimeDetourAddress + 0x26, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(CustomizationCheatsFh5.BackfireTimeDetourAddress + 0x27, Convert.ToSingle(MinBackfire.Value));
-        GetInstance().WriteMemory(CustomizationCheatsFh5.BackfireTimeDetourAddress + 0x2B, Convert.ToSingle(MaxBackfire.Value));
+        GetInstance().WriteMemory(CustomizationCheatsInst.BackfireTimeDetourAddress + 0x26, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CustomizationCheatsInst.BackfireTimeDetourAddress + 0x27, Convert.ToSingle(MinBackfire.Value));
+        GetInstance().WriteMemory(CustomizationCheatsInst.BackfireTimeDetourAddress + 0x2B, Convert.ToSingle(MaxBackfire.Value));
     }
 
     private void MinBackfire_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CustomizationCheatsFh5.BackfireTimeDetourAddress == 0)
+        if (CustomizationCheatsInst.BackfireTimeDetourAddress == 0)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CustomizationCheatsFh5.BackfireTimeDetourAddress + 0x27, Convert.ToSingle(e.NewValue));
+        GetInstance().WriteMemory(CustomizationCheatsInst.BackfireTimeDetourAddress + 0x27, Convert.ToSingle(e.NewValue));
     }
 
     private void MaxBackfire_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CustomizationCheatsFh5.BackfireTimeDetourAddress == 0)
+        if (CustomizationCheatsInst.BackfireTimeDetourAddress == 0)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CustomizationCheatsFh5.BackfireTimeDetourAddress + 0x2B, Convert.ToSingle(e.NewValue));
+        GetInstance().WriteMemory(CustomizationCheatsInst.BackfireTimeDetourAddress + 0x2B, Convert.ToSingle(e.NewValue));
     }
 
     private void PaintSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -268,12 +276,12 @@ public partial class Customization
 
         slider.Value = Math.Round(e.NewValue, 2);
         ViewModel.GlowingPaintValue = Convert.ToSingle(e.NewValue);
-        if (CustomizationCheatsFh5.PaintDetourAddress == 0)
+        if (CustomizationCheatsInst.PaintDetourAddress == 0)
         {
             return;
         }
                 
-        GetInstance().WriteMemory(CustomizationCheatsFh5.PaintDetourAddress + 0x37, ViewModel.GlowingPaintValue);
+        GetInstance().WriteMemory(CustomizationCheatsInst.PaintDetourAddress + 0x37, ViewModel.GlowingPaintValue);
     }
 
     private async void PaintSwitchOnToggled(object sender, RoutedEventArgs e)
@@ -284,13 +292,13 @@ public partial class Customization
         }
 
         toggleSwitch.IsEnabled = false;
-        if (CustomizationCheatsFh5.PaintDetourAddress == 0)
+        if (CustomizationCheatsInst.PaintDetourAddress == 0)
         {
-            await CustomizationCheatsFh5.CheatGlowingPaint();
+            await CustomizationCheatsInst.CheatGlowingPaint();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (CustomizationCheatsFh5.PaintDetourAddress == 0)
+        if (CustomizationCheatsInst.PaintDetourAddress == 0)
         {
             toggleSwitch.Toggled -= PaintSwitchOnToggled;
             toggleSwitch.IsOn = false;
@@ -300,7 +308,7 @@ public partial class Customization
                 
         ViewModel.GlowingPaintEnabled = toggleSwitch.IsOn;
         var write = toggleSwitch.IsOn ? (byte)1 : (byte)0;
-        GetInstance().WriteMemory(CustomizationCheatsFh5.PaintDetourAddress + 0x36, write);
-        GetInstance().WriteMemory(CustomizationCheatsFh5.PaintDetourAddress + 0x37, ViewModel.GlowingPaintValue);
+        GetInstance().WriteMemory(CustomizationCheatsInst.PaintDetourAddress + 0x36, write);
+        GetInstance().WriteMemory(CustomizationCheatsInst.PaintDetourAddress + 0x37, ViewModel.GlowingPaintValue);
     }
 }

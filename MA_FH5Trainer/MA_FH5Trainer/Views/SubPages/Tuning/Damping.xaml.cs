@@ -1,10 +1,18 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Views.Windows;
-using static MA_FH5Trainer.Resources.Memory;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+using XPaint.Views.Windows;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.Tuning;
+namespace XPaint.Views.SubPages.Tuning;
 
 public partial class Damping
 {
@@ -17,9 +25,17 @@ public partial class Damping
     }
     
     public MainWindow MainWindow { get; }
-    private static TuningCheats TuningCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<TuningCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+    private static TuningCheats TuningCheatsFh5 => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
+=======
+    private static TuningCheats TuningCheatsInst => XPaint.Resources.Cheats.GetClass<TuningCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/Tuning/Damping.xaml.cs
     private static readonly int[] Offsets = [0x330, 0x8, 0x1E0, 0x0];
-    private static UIntPtr Ptr => GetInstance().FollowMultiLevelPointer(TuningCheatsFh5.Base2, Offsets);
+    private static UIntPtr Ptr => GetInstance().FollowMultiLevelPointer(TuningCheatsInst.Base2, Offsets);
 
     private async void Scan_OnClick(object sender, RoutedEventArgs e)
     {
@@ -27,12 +43,12 @@ public partial class Damping
         MainWindow.ViewModel.TuningScanToBeDone = false;
         MainWindow.ViewModel.TuningScanInProgress = true;
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
-            await TuningCheatsFh5.Scan();
+            await TuningCheatsInst.Scan();
         }
 
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             MainWindow.ViewModel.TuningScanSuccess = false;
             MainWindow.ViewModel.TuningScanToBeDone = true;
@@ -52,7 +68,7 @@ public partial class Damping
 
     private void ValueBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (!TuningCheatsFh5.WasScanSuccessful)
+        if (!TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }
@@ -130,7 +146,7 @@ public partial class Damping
 
     private void UpdateValue()
     {
-        if (ValueBox == null || !TuningCheatsFh5.WasScanSuccessful)
+        if (ValueBox == null || !TuningCheatsInst.WasScanSuccessful)
         {
             return;
         }

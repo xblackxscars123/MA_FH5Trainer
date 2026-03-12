@@ -23,7 +23,7 @@
     <system:String x:Key="TranslatedBy">Translated by: </system:String>
     
     <!-- MainWindow.xaml - Main controls -->
-    <system:String x:Key="MA_FH5TrainerInfo">Home</system:String>
+    <system:String x:Key="XPaintInfo">Home</system:String>
     <system:String x:Key="Autoshow">Autoshow/Garage</system:String>
     <system:String x:Key="SelfVehicle">Self/Vehicle</system:String>
     <system:String x:Key="Tuning">Tuning</system:String>
@@ -47,17 +47,49 @@
     <system:String x:Key="DisableCrc">Disable CRC Checks</system:String>
     <system:String x:Key="DisableEncryption">Disable Value Encryption</system:String>
 
-    <!-- MA_FH5TrainerInfo.xaml - Main controls -->
-    <system:String x:Key="FreeAndOpenSource">This tool is free and open source. If you paid for it you got scammed</system:String>
-    <system:String x:Key="OnlyOfficialDownload">The only official download is the GitHub repository (which you can find in the about page or the right hand side)</system:String>
-    <system:String x:Key="JoinTheDiscord">Join the discord here:</system:String>
-    <system:String x:Key="DiscordHyperlink">https://discord.gg/rHzev9brJ3</system:String>
-    <system:String x:Key="MainDeveloper">The main developer of this software is @merikaaaaa (859106884358635530) on discord</system:String>
-    <system:String x:Key="AnyoneElseWhoClaims">Anyone else who claims to have made it is lying</system:String>
+    <!-- XPaintInfo.xaml - Main controls -->
+    <system:String x:Key="FreeAndOpenSource">xpaint Color Utilities</system:String>
+    <system:String x:Key="OnlyOfficialDownload">Always use the official download source</system:String>
+    <system:String x:Key="JoinTheDiscord">Community:</system:String>
+    <system:String x:Key="DiscordHyperlink"></system:String>
+    <system:String x:Key="MainDeveloper">xpaint development team</system:String>
+    <system:String x:Key="AnyoneElseWhoClaims"></system:String>
     <system:String x:Key="Donations">Donations</system:String>
     <system:String x:Key="UsefulLinks">Useful Links</system:String>
-    <system:String x:Key="MerikasDiscord">Merika's Discord</system:String>
-    <system:String x:Key="GitRepository">Github Repository</system:String>
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+    <system:String x:Key="MerikasDiscord">Community</system:String>
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+=======
+    <system:String x:Key="CommunityLink">Community</system:String>
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Resources/Translations/English.xaml
+    <system:String x:Key="GitRepository">Repository</system:String>
     <system:String x:Key="Overlay">Overlay</system:String>
     <system:String x:Key="DebugWindow">Debug Window</system:String>
     

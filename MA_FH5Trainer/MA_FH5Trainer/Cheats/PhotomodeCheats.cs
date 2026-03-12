@@ -1,7 +1,57 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
 ﻿using static MA_FH5Trainer.Resources.Cheats;
 using static MA_FH5Trainer.Resources.Memory;
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
+=======
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/PhotomodeCheats.cs
 
 public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
 {
@@ -20,7 +70,7 @@ public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _noClipAddress = 0;
         NoClipDetourAddress = 0;
 
-        const string sig = "48 89 ? ? 48 C7 45 B0 ? ? ? ? 48 8B ? ? ? ? ? 48 85";
+        var sig = D("kwPRZLEO60mYG8VkqG3jSZMO0R64DutJmBvOfLcO4FGHA7N8tw7rSZgbzny3DuBRhwPE");
         _noClipAddress = await SmartAobScan(sig);
 
         if (_noClipAddress > 0)
@@ -50,7 +100,7 @@ public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _noHeightLimitAddress = 0;
         NoHeightLimitDetourAddress = 0;
 
-        const string sig = "F2 0F ? ? ? ? ? ? 66 0F ? ? 0F 2F";
+        var sig = D("4QnRbM4O60mYG858tw7rSZgbx2qoHpJJmBvOfLho9Fvh");
         _noHeightLimitAddress = await SmartAobScan(sig);
 
         if (_noHeightLimitAddress > 0)
@@ -79,7 +129,7 @@ public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
         _increasedZoomAddress = 0;
         IncreasedZoomDetourAddress = 0;
 
-        const string sig = "FF 90 ? ? ? ? F3 0F ? ? ? ? ? ? F3 0F ? ? ? ? ? ? 0F 28 ? F3 0F ? ? F3 0F ? ? F3 0F ? ? ? F3 0F ? ? ? ? F3 0F";
+        var sig = D("4X3RZbgO60mYG858tw6SWocLt3y3DutJmBvOfLcO60nhCNFszg7rSZgbzny3DutJmBvBGqgc7EmYG7dvqB6SSZgbznzOHfRZ4RvOfLcOklqHC7d8tw7rSZgbt2+oHpJJmBvOfLcO60nhCNFszg==");
         _increasedZoomAddress = await SmartAobScan(sig);
 
         if (_increasedZoomAddress > 0)
@@ -110,7 +160,7 @@ public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
 
         var successCount = 0;
         
-        const string mainModifiersSig = "3B 1D ? ? ? ? 0F 4E";
+        var mainModifiersSig = D("lHnRbcwO60mYG858tw7kL4cPtA==");
         MainModifiersAddress = await SmartAobScan(mainModifiersSig);
         if (MainModifiersAddress <= 0)
         {
@@ -122,7 +172,7 @@ public class PhotomodeCheats : CheatsUtilities, ICheatsBase, IRevertBase
         MainModifiersAddress = (nuint)((nint)MainModifiersAddress + mainRelative + 6);
         ++successCount;
 
-        const string speedSig = "F3 0F ? ? ? ? ? ? F3 0F ? ? ? ? ? ? 48 8B ? ? ? ? ? ? 0F 10 ? ? ? ? ? 0F 28";
+        var speedSig = D("4QjRbM4O60mYG858tw7rSZgbt2+oHpJJmBvOfLcO60mYG858vBb0UeUbzny3DutJmBvOfLcO5C+HCsF8tw7rSZgbzny3DuQvhwnJ");
         SpeedAddress = await SmartAobScan(speedSig);
         if (SpeedAddress <= 0)
         {

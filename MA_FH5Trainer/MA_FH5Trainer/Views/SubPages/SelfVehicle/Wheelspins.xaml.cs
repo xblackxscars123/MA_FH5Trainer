@@ -1,6 +1,60 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 ﻿using MA_FH5Trainer.Cheats.ForzaHorizon5;
 using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
 using MA_FH5Trainer.Views.Windows;
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,9 +70,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
+namespace XPaint.Views.SubPages.SelfVehicle
 {
     /// <summary>
     /// Interaction logic for Wheelspins.xaml
@@ -36,8 +90,16 @@ namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
         public MainWindow MainWindow { get; }
         public WheelspinsViewModel ViewModel { get; }
 
-        public MiscCheats MiscCheats = MA_FH5Trainer.Resources.Cheats.GetClass<MiscCheats>();
-        public UnlocksCheats UnlocksCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<UnlocksCheats>();
+        public MiscCheats MiscCheats = XPaint.Resources.Cheats.GetClass<MiscCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+        public UnlocksCheats UnlocksCheatsFh5 => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
+=======
+        public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
+=======
+        public UnlocksCheats UnlocksCheatsInst => XPaint.Resources.Cheats.GetClass<UnlocksCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Wheelspins.xaml.cs
 
         private async void EmoteSwitch_OnToggled(object sender, RoutedEventArgs e)
         {
@@ -47,13 +109,13 @@ namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
             }
 
             toggleSwitch.IsEnabled = false;
-            if (UnlocksCheatsFh5.EmoteDetourAddress == 0)
+            if (UnlocksCheatsInst.EmoteDetourAddress == 0)
             {
-                await UnlocksCheatsFh5.CheatEmote();
+                await UnlocksCheatsInst.CheatEmote();
             }
             toggleSwitch.IsEnabled = true;
 
-            if (UnlocksCheatsFh5.EmoteDetourAddress == 0)
+            if (UnlocksCheatsInst.EmoteDetourAddress == 0)
             {
                 toggleSwitch.Toggled -= EmoteSwitch_OnToggled;
                 toggleSwitch.IsOn = false;
@@ -62,19 +124,19 @@ namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
             }
 
             int value = (int)emoteIdBox.Value;
-            GetInstance().WriteMemory(UnlocksCheatsFh5.EmoteDetourAddress + 0x20, value);
-            GetInstance().WriteMemory(UnlocksCheatsFh5.EmoteDetourAddress + 0x1F, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+            GetInstance().WriteMemory(UnlocksCheatsInst.EmoteDetourAddress + 0x20, value);
+            GetInstance().WriteMemory(UnlocksCheatsInst.EmoteDetourAddress + 0x1F, toggleSwitch.IsOn ? (byte)1 : (byte)0);
         }
 
         private void EmoteIdBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
         {
-            if (UnlocksCheatsFh5.EmoteDetourAddress == 0 || e.NewValue == null)
+            if (UnlocksCheatsInst.EmoteDetourAddress == 0 || e.NewValue == null)
             {
                 return;
             }
 
             int value = (int)e.NewValue.Value;
-            GetInstance().WriteMemory(UnlocksCheatsFh5.EmoteDetourAddress + 0x20, value);
+            GetInstance().WriteMemory(UnlocksCheatsInst.EmoteDetourAddress + 0x20, value);
         }
 
         private async void SellHackToggle_Toggled(object sender, RoutedEventArgs e)

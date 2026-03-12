@@ -1,17 +1,25 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Resources.Keybinds;
-using MA_FH5Trainer.Resources.Theme;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.ViewModels.Windows;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Handling.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Handling.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Handling.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Handling.xaml.cs
+using XPaint.Resources.Keybinds;
+using XPaint.Resources.Theme;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.ViewModels.Windows;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class Handling
 {
@@ -22,7 +30,7 @@ public partial class Handling
 
     private static void JumpHackCallback()
     {
-        var address = CarCheatsFh5.LocalPlayerHookDetourAddress;
+        var address = CarCheatsInst.LocalPlayerHookDetourAddress;
         if (address <= UIntPtr.Zero)
         {
             return;
@@ -33,7 +41,7 @@ public partial class Handling
     
     private static void BrakeHackCallback()
     {
-        var address = CarCheatsFh5.LocalPlayerHookDetourAddress;
+        var address = CarCheatsInst.LocalPlayerHookDetourAddress;
         if (address <= UIntPtr.Zero)
         {
             return;
@@ -44,7 +52,7 @@ public partial class Handling
     
     private static void VelocityCallback()
     {
-        var address = CarCheatsFh5.LocalPlayerHookDetourAddress;
+        var address = CarCheatsInst.LocalPlayerHookDetourAddress;
         if (address <= UIntPtr.Zero)
         {
             return;
@@ -55,7 +63,7 @@ public partial class Handling
 
     private static void WheelspeedCallback()
     {
-        var address = CarCheatsFh5.LocalPlayerHookDetourAddress;
+        var address = CarCheatsInst.LocalPlayerHookDetourAddress;
         if (address <= UIntPtr.Zero)
         {
             return;
@@ -85,7 +93,7 @@ public partial class Handling
         }
     }
 
-    private static CarCheats CarCheatsFh5 => GetClass<CarCheats>();
+    private static CarCheats CarCheatsInst => GetClass<CarCheats>();
     public HandlingViewModel ViewModel { get; }
 
     private async void ModifierToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -96,13 +104,13 @@ public partial class Handling
         }
 
         ViewModel.AreUiElementsEnabled = false;
-        if (CarCheatsFh5.AccelDetourAddress == 0)
+        if (CarCheatsInst.AccelDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatAccel();
+            await CarCheatsInst.CheatAccel();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.AccelDetourAddress <= 0)
+        if (CarCheatsInst.AccelDetourAddress <= 0)
         {
             toggleSwitch.Toggled -= ModifierToggleSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -110,20 +118,20 @@ public partial class Handling
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.AccelDetourAddress + 0x58, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(CarCheatsFh5.AccelDetourAddress + 0x59, Convert.ToSingle(AccelSlider.Value) / 100);  
+        GetInstance().WriteMemory(CarCheatsInst.AccelDetourAddress + 0x58, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CarCheatsInst.AccelDetourAddress + 0x59, Convert.ToSingle(AccelSlider.Value) / 100);  
         ViewModel.IsAccelEnabled = toggleSwitch.IsOn;
     }
     
     private void ModifierValueBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
     {
         ViewModel.AccelValue = Convert.ToDouble(e.NewValue);
-        if (CarCheatsFh5.AccelDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.AccelDetourAddress <= UIntPtr.Zero)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.AccelDetourAddress + 0x59, Convert.ToSingle(e.NewValue) / 100);  
+        GetInstance().WriteMemory(CarCheatsInst.AccelDetourAddress + 0x59, Convert.ToSingle(e.NewValue) / 100);  
     }
 
     private async void VelocitySwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -135,13 +143,13 @@ public partial class Handling
 
         ViewModel.AreUiElementsEnabled = false;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress == 0)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatLocalPlayer();
+            await CarCheatsInst.CheatLocalPlayer();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             toggleSwitch.Toggled -= VelocitySwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -149,21 +157,21 @@ public partial class Handling
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelBoost, 1f + Convert.ToSingle(VelocityStrength.Value / 1000));  
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelLimit, Convert.ToSingle(VelocityLimit.Value));
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelBoost, 1f + Convert.ToSingle(VelocityStrength.Value / 1000));  
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelLimit, Convert.ToSingle(VelocityLimit.Value));
         _velocityHotkey.CanExecute = toggleSwitch.IsOn;
     }
 
     private void VelocityStrength_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelBoost, 1f + Convert.ToSingle(VelocityStrength.Value / 1000));  
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelBoost, 1f + Convert.ToSingle(VelocityStrength.Value / 1000));  
     }
 
     private void VelocityLimit_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelLimit, Convert.ToSingle(VelocityLimit.Value));  
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.VelLimit, Convert.ToSingle(VelocityLimit.Value));  
     }
 
     private async void WheelspeedSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -175,13 +183,13 @@ public partial class Handling
 
         ViewModel.AreUiElementsEnabled = false;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress == 0)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatLocalPlayer();
+            await CarCheatsInst.CheatLocalPlayer();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             toggleSwitch.Toggled -= WheelspeedSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -189,22 +197,22 @@ public partial class Handling
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedMode, (byte)WheelspeedModeBox.SelectedIndex);  
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedBoost, Convert.ToSingle(WheelspeedValueBox.Value));
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedLimit, Convert.ToSingle(WheelspeedLimit.Value));  
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedMode, (byte)WheelspeedModeBox.SelectedIndex);  
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedBoost, Convert.ToSingle(WheelspeedValueBox.Value));
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedLimit, Convert.ToSingle(WheelspeedLimit.Value));  
         _wheelspeedHotkey.CanExecute = toggleSwitch.IsOn;
     }
 
     private void WheelspeedNum_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedBoost, Convert.ToSingle(WheelspeedValueBox.Value));  
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedBoost, Convert.ToSingle(WheelspeedValueBox.Value));  
     }
 
     private void WheelspeedModeBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedMode, (byte)WheelspeedModeBox.SelectedIndex);   
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedMode, (byte)WheelspeedModeBox.SelectedIndex);   
     }
 
     private void JumpSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -214,12 +222,12 @@ public partial class Handling
             slider.Value = (Math.Round(e.NewValue, 2));
         }
         
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.JumpHackBoost, Convert.ToSingle(e.NewValue));   
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.JumpHackBoost, Convert.ToSingle(e.NewValue));   
     }
 
     private async void JumpSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -231,27 +239,27 @@ public partial class Handling
         
         ViewModel.AreUiElementsEnabled = false;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress == 0)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatLocalPlayer();
+            await CarCheatsInst.CheatLocalPlayer();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             toggleSwitch.Toggled -= JumpSwitch_OnToggled;
             toggleSwitch.IsOn = false;
             toggleSwitch.Toggled -= JumpSwitch_OnToggled;
             return;
         } 
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.JumpHackBoost, Convert.ToSingle(JumpSlider.Value));
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.JumpHackBoost, Convert.ToSingle(JumpSlider.Value));
         _jumpHackHotkey.CanExecute = toggleSwitch.IsOn;
     }
 
     private void StopSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.BrakeHackBoost, 1f - Convert.ToSingle(e.NewValue) / 100);   
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero) return;
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.BrakeHackBoost, 1f - Convert.ToSingle(e.NewValue) / 100);   
     }
 
     private async void StopSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -262,13 +270,13 @@ public partial class Handling
         }
         
         ViewModel.AreUiElementsEnabled = false;
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress == 0)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatLocalPlayer();
+            await CarCheatsInst.CheatLocalPlayer();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             toggleSwitch.Toggled -= StopSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -276,7 +284,7 @@ public partial class Handling
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.BrakeHackBoost, 1f - Convert.ToSingle(StopSlider.Value) / 100);
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.BrakeHackBoost, 1f - Convert.ToSingle(StopSlider.Value) / 100);
         _brakeHackHotkey.CanExecute = toggleSwitch.IsOn;
     }
 
@@ -288,20 +296,20 @@ public partial class Handling
         }
 
         toggleSwitch.IsEnabled = false;
-        if (CarCheatsFh5.NoWaterDragDetourAddress == 0)
+        if (CarCheatsInst.NoWaterDragDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatNoWaterDrag();
+            await CarCheatsInst.CheatNoWaterDrag();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (CarCheatsFh5.NoWaterDragDetourAddress == 0)
+        if (CarCheatsInst.NoWaterDragDetourAddress == 0)
         {
             toggleSwitch.Toggled -= NoWaterDragSwitch_OnToggled;
             toggleSwitch.IsOn = false;
             toggleSwitch.Toggled += NoWaterDragSwitch_OnToggled;
             return;
         }
-        GetInstance().WriteMemory(CarCheatsFh5.NoWaterDragDetourAddress + 0x17, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CarCheatsInst.NoWaterDragDetourAddress + 0x17, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private async void NoClipSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -312,30 +320,30 @@ public partial class Handling
         }
 
         ViewModel.AreUiElementsEnabled = false;
-        if (CarCheatsFh5.NoClipDetourAddress == 0)
+        if (CarCheatsInst.NoClipDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatNoClip();
+            await CarCheatsInst.CheatNoClip();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.NoClipDetourAddress == 0)
+        if (CarCheatsInst.NoClipDetourAddress == 0)
         {
             toggleSwitch.Toggled -= NoClipSwitch_OnToggled;
             toggleSwitch.IsOn = false;
             toggleSwitch.Toggled += NoClipSwitch_OnToggled;
             return;
         }
-        GetInstance().WriteMemory(CarCheatsFh5.NoClipDetourAddress + 0x31, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CarCheatsInst.NoClipDetourAddress + 0x31, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
     
     private void WheelspeedLimit_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CarCheatsFh5.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.LocalPlayerHookDetourAddress <= UIntPtr.Zero)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedLimit, Convert.ToSingle(e.NewValue));  
+        GetInstance().WriteMemory(CarCheatsInst.LocalPlayerHookDetourAddress + CarCheatsOffsets.WheelspeedLimit, Convert.ToSingle(e.NewValue));  
     }
     private async void GravToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
     {                
@@ -345,13 +353,13 @@ public partial class Handling
         }
 
         ViewModel.AreUiElementsEnabled = false;
-        if (CarCheatsFh5.GravityDetourAddress == 0)
+        if (CarCheatsInst.GravityDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatGravity();
+            await CarCheatsInst.CheatGravity();
         }
         ViewModel.AreUiElementsEnabled = true;
 
-        if (CarCheatsFh5.GravityDetourAddress <= 0)
+        if (CarCheatsInst.GravityDetourAddress <= 0)
         {
             toggleSwitch.Toggled -= GravToggleSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -359,19 +367,19 @@ public partial class Handling
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.GravityDetourAddress + 0x59, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(CarCheatsFh5.GravityDetourAddress + 0x5A,Convert.ToSingle(GravValueBox.Value) / 100);   
+        GetInstance().WriteMemory(CarCheatsInst.GravityDetourAddress + 0x59, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CarCheatsInst.GravityDetourAddress + 0x5A,Convert.ToSingle(GravValueBox.Value) / 100);   
         ViewModel.IsGravityEnabled = toggleSwitch.IsOn;
     }
 
     private void GravValueBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
     {
         ViewModel.GravityValue = Convert.ToDouble(e.NewValue);
-        if (CarCheatsFh5.GravityDetourAddress <= UIntPtr.Zero)
+        if (CarCheatsInst.GravityDetourAddress <= UIntPtr.Zero)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.GravityDetourAddress + 0x5A, Convert.ToSingle(e.NewValue) / 100);   
+        GetInstance().WriteMemory(CarCheatsInst.GravityDetourAddress + 0x5A, Convert.ToSingle(e.NewValue) / 100);   
     }
 }

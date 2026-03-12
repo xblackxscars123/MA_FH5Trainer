@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MA_FH5Trainer.Views.Windows;
+using XPaint.Views.Windows;
 
-namespace MA_FH5Trainer.ViewModels.SubPages;
+namespace XPaint.ViewModels.SubPages;
 
 public partial class MultipliersViewModel : ObservableObject
 {

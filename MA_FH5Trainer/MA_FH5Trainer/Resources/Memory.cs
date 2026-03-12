@@ -1,6 +1,6 @@
 ﻿using Memory;
 
-namespace MA_FH5Trainer.Resources;
+namespace XPaint.Resources;
 
 public static class Memory
 {

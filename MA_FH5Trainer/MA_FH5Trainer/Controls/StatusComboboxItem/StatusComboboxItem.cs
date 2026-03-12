@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Controls;
 
-namespace MA_FH5Trainer.Controls.StatusComboboxItem;
+namespace XPaint.Controls.StatusComboboxItem;
 
 public class StatusComboboxItem : ComboBoxItem
 {
@@ -13,7 +13,7 @@ public class StatusComboboxItem : ComboBoxItem
             new PropertyMetadata(default(bool)));
     
     [Bindable(true)]
-    [Category("MA_FH5Trainer")]
+    [Category("XPaint")]
     public bool IsOn
     {
         get => (bool)GetValue(IsOnProperty);

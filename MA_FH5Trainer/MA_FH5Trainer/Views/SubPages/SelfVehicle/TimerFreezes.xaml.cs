@@ -1,5 +1,50 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
 ﻿using MA_FH5Trainer.Cheats.ForzaHorizon5;
 using MA_FH5Trainer.Views.Windows;
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+﻿using XPaint.Cheats.ForzaHorizon5;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
+=======
+using XPaint.Cheats.Core;
+using XPaint.Views.Windows;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/TimerFreezes.xaml.cs
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,9 +60,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
+namespace XPaint.Views.SubPages.SelfVehicle
 {
     /// <summary>
     /// Interaction logic for TimerFreezes.xaml
@@ -29,7 +74,7 @@ namespace MA_FH5Trainer.Views.SubPages.SelfVehicle
             InitializeComponent();
         }
 
-        public MiscCheats MiscCheats = MA_FH5Trainer.Resources.Cheats.GetClass<MiscCheats>();
+        public MiscCheats MiscCheats = XPaint.Resources.Cheats.GetClass<MiscCheats>();
 
         private async void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {

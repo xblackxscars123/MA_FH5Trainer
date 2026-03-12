@@ -1,14 +1,22 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Unlocks.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Unlocks.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Unlocks.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Unlocks.xaml.cs
+using XPaint.Models;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class Unlocks
 {
@@ -23,7 +31,7 @@ public partial class Unlocks
 
     public MainWindow MainWindow { get; } 
     public UnlocksViewModel ViewModel { get; }
-    private static UnlocksCheats UnlocksCheatsFh5 => GetClass<UnlocksCheats>();
+    private static UnlocksCheats UnlocksCheatsInst => GetClass<UnlocksCheats>();
     
     private async void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
     {
@@ -53,90 +61,90 @@ public partial class Unlocks
     }
     private async Task<bool> SkillPoints(bool toggled)
     {
-        if (UnlocksCheatsFh5.SkillPointsDetourAddress == 0)
+        if (UnlocksCheatsInst.SkillPointsDetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatSkillPoints();
+            await UnlocksCheatsInst.CheatSkillPoints();
         }
 
-        if (UnlocksCheatsFh5.SkillPointsDetourAddress <= 0)
+        if (UnlocksCheatsInst.SkillPointsDetourAddress <= 0)
         {
             return false;
         }
         
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SkillPointsDetourAddress + 0x19, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SkillPointsDetourAddress + 0x1A, Convert.ToInt32(ValueBox.Value));  
+        GetInstance().WriteMemory(UnlocksCheatsInst.SkillPointsDetourAddress + 0x19, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.SkillPointsDetourAddress + 0x1A, Convert.ToInt32(ValueBox.Value));  
         ViewModel.IsSkillPointsEnabled = toggled;
         return true;
     }
 
     private async Task<bool> Kudos(bool toggled)
     {
-        if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress == 0)
+        if (UnlocksCheatsInst.BxmlEncryptionDetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatBxmlEncryption();
+            await UnlocksCheatsInst.CheatBxmlEncryption();
         }
 
-        if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress <= 0)
+        if (UnlocksCheatsInst.BxmlEncryptionDetourAddress <= 0)
         {
             return false;
         }
         
-        GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x54, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x55, Convert.ToInt32(ValueBox.Value));  
+        GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x54, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x55, Convert.ToInt32(ValueBox.Value));  
         ViewModel.IsKudosEnabled = toggled;
         return true;
     }
 
     private async Task<bool> Accolades(bool toggled)
     {
-        if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress == 0)
+        if (UnlocksCheatsInst.BxmlEncryptionDetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatBxmlEncryption();
+            await UnlocksCheatsInst.CheatBxmlEncryption();
         }
 
-        if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress <= 0)
+        if (UnlocksCheatsInst.BxmlEncryptionDetourAddress <= 0)
         {
             return false;
         }
         
-        GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x59, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x5A, Convert.ToInt32(ValueBox.Value));  
+        GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x59, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x5A, Convert.ToInt32(ValueBox.Value));  
         ViewModel.IsAccoladesEnabled = toggled;
         return true;
     }
 
     private async Task<bool> Seasonal(bool toggled)
     {
-        if (UnlocksCheatsFh5.SeasonalDetourAddress == 0)
+        if (UnlocksCheatsInst.SeasonalDetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatSeasonal();
+            await UnlocksCheatsInst.CheatSeasonal();
         }
 
-        if (UnlocksCheatsFh5.SeasonalDetourAddress <= 0)
+        if (UnlocksCheatsInst.SeasonalDetourAddress <= 0)
         {
             return false;
         }
         
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SeasonalDetourAddress + 0x23, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SeasonalDetourAddress + 0x24, Convert.ToInt32(ValueBox.Value));  
+        GetInstance().WriteMemory(UnlocksCheatsInst.SeasonalDetourAddress + 0x23, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.SeasonalDetourAddress + 0x24, Convert.ToInt32(ValueBox.Value));  
         ViewModel.IsSeasonalEnabled = toggled;
         return true;
     }
     
     private async Task<bool> Series(bool toggled)
     {
-        if (UnlocksCheatsFh5.SeriesDetourAddress == 0)
+        if (UnlocksCheatsInst.SeriesDetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatSeries();
+            await UnlocksCheatsInst.CheatSeries();
         }
 
-        if (UnlocksCheatsFh5.SeriesDetourAddress <= 0)
+        if (UnlocksCheatsInst.SeriesDetourAddress <= 0)
         {
             return false;
         }
         
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SeriesDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.SeriesDetourAddress + 0x1C, Convert.ToInt32(ValueBox.Value));  
+        GetInstance().WriteMemory(UnlocksCheatsInst.SeriesDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.SeriesDetourAddress + 0x1C, Convert.ToInt32(ValueBox.Value));  
         ViewModel.IsSeriesEnabled = toggled;
         return true;
     }
@@ -149,7 +157,7 @@ public partial class Unlocks
         }
 
         // ReSharper disable once AssignNullToNotNullAttribute
-        // note(merika): I dunno what was this.
+        // note: unclear purpose of this block.
         while (((ComboBoxItem)comboBox.Items[comboBox.SelectedIndex]).Visibility == Visibility.Collapsed)
         {
             comboBox.SelectedIndex -= 1;
@@ -200,52 +208,52 @@ public partial class Unlocks
             case 0:
             {
                 ViewModel.SkillPointsValue = Convert.ToInt32(ValueBox.Value);
-                if (UnlocksCheatsFh5.SkillPointsDetourAddress <= 0)
+                if (UnlocksCheatsInst.SkillPointsDetourAddress <= 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(UnlocksCheatsFh5.SkillPointsDetourAddress + 0x1A, ViewModel.SkillPointsValue);  
+                GetInstance().WriteMemory(UnlocksCheatsInst.SkillPointsDetourAddress + 0x1A, ViewModel.SkillPointsValue);  
                 break;
             }
             case 1:
             {
                 ViewModel.AccoladesValue = Convert.ToInt32(ValueBox.Value);
-                if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress <= 0)
+                if (UnlocksCheatsInst.BxmlEncryptionDetourAddress <= 0)
                 {
                     return;
                 }
-                GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x5A, Convert.ToInt32(ValueBox.Value));  
+                GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x5A, Convert.ToInt32(ValueBox.Value));  
                 break;
             }
             case 2:
             {
                 ViewModel.KudosValue = Convert.ToInt32(ValueBox.Value);
-                if (UnlocksCheatsFh5.BxmlEncryptionDetourAddress <= 0)
+                if (UnlocksCheatsInst.BxmlEncryptionDetourAddress <= 0)
                 {
                     return;
                 }
-                GetInstance().WriteMemory(UnlocksCheatsFh5.BxmlEncryptionDetourAddress + 0x55, Convert.ToInt32(ValueBox.Value));  
+                GetInstance().WriteMemory(UnlocksCheatsInst.BxmlEncryptionDetourAddress + 0x55, Convert.ToInt32(ValueBox.Value));  
                 break;
             }
             case 3:
             {
                 ViewModel.SeriesValue = Convert.ToInt32(ValueBox.Value);
-                if (UnlocksCheatsFh5.SeriesDetourAddress <= 0)
+                if (UnlocksCheatsInst.SeriesDetourAddress <= 0)
                 {
                     return;
                 }
-                GetInstance().WriteMemory(UnlocksCheatsFh5.SeriesDetourAddress + 0x1C, Convert.ToInt32(ValueBox.Value));  
+                GetInstance().WriteMemory(UnlocksCheatsInst.SeriesDetourAddress + 0x1C, Convert.ToInt32(ValueBox.Value));  
                 break;
             }
             case 4:
             {
                 ViewModel.SeasonalValue = Convert.ToInt32(ValueBox.Value);
-                if (UnlocksCheatsFh5.SeasonalDetourAddress <= 0)
+                if (UnlocksCheatsInst.SeasonalDetourAddress <= 0)
                 {
                     return;
                 }
-                GetInstance().WriteMemory(UnlocksCheatsFh5.SeasonalDetourAddress + 0x24, Convert.ToInt32(ValueBox.Value));  
+                GetInstance().WriteMemory(UnlocksCheatsInst.SeasonalDetourAddress + 0x24, Convert.ToInt32(ValueBox.Value));  
                 break;
             }
         }
@@ -258,13 +266,13 @@ public partial class Unlocks
         }
 
         toggleSwitch.IsEnabled = false;
-        if (UnlocksCheatsFh5.Clothing1DetourAddress == 0 || UnlocksCheatsFh5.Clothing2DetourAddress == 0)
+        if (UnlocksCheatsInst.Clothing1DetourAddress == 0 || UnlocksCheatsInst.Clothing2DetourAddress == 0)
         {
-            await UnlocksCheatsFh5.CheatClothing();
+            await UnlocksCheatsInst.CheatClothing();
         }
         
         toggleSwitch.IsEnabled = true;
-        if (UnlocksCheatsFh5.Clothing1DetourAddress == 0 || UnlocksCheatsFh5.Clothing2DetourAddress == 0)
+        if (UnlocksCheatsInst.Clothing1DetourAddress == 0 || UnlocksCheatsInst.Clothing2DetourAddress == 0)
         {
             toggleSwitch.Toggled -= FreeClothingSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -272,8 +280,8 @@ public partial class Unlocks
             return;
         }
 
-        GetInstance().WriteMemory(UnlocksCheatsFh5.Clothing1DetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(UnlocksCheatsFh5.Clothing2DetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.Clothing1DetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(UnlocksCheatsInst.Clothing2DetourAddress + 0x19, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
 }

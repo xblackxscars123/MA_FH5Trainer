@@ -1,7 +1,59 @@
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
 ﻿using static MA_FH5Trainer.Resources.Cheats;
 using static MA_FH5Trainer.Resources.Memory;
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+﻿using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
 
-namespace MA_FH5Trainer.Cheats.ForzaHorizon5;
+namespace XPaint.Cheats.ForzaHorizon5;
+=======
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
+=======
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+using static XPaint.Resources.StringCipher;
+
+namespace XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Cheats/TuningCheats.cs
 
 public static class TuningOffsets
 {
@@ -115,7 +167,7 @@ public class TuningCheats : CheatsUtilities, ICheatsBase
 
         ++successCount;
 
-        const string base1Sig = "4C 8B ? ? ? ? ? 49 8B ? ? 4C 8D ? ? 8B 11";
+        var base1Sig = D("k3jRZMoO60mYG858tw7rSZMC0WTKDutJmBvFH6gWkEmYG858sGz0WJY=");
         Base1 = await SmartAobScan(base1Sig);
         if (Base1 <= 0)
         {
@@ -127,7 +179,7 @@ public class TuningCheats : CheatsUtilities, ICheatsBase
         Base1 = (nuint)((nint)Base1 + base1Relative + 7);
         ++successCount;
 
-        const string base2Sig = "48 8D ? ? ? ? ? 48 8B ? ? 48 85 ? 74 ? E8 ? ? ? ? 90";
+        var base2Sig = D("kwPRZMwO60mYG858tw7rSZMD0WTKDutJmBvFZKgW4UmYG8ZoqBH0LJ8bzny3DutJmBvIbA==");
         Base2 = await SmartAobScan(base2Sig);
         if (Base2 <= 0)
         {
@@ -139,7 +191,7 @@ public class TuningCheats : CheatsUtilities, ICheatsBase
         Base2 = (nuint)((nint)Base2 + base2Relative + 7);
         ++successCount;
 
-        const string base3Sig = "FF 50 ? 48 8B ? ? ? ? ? 48 85 ? 0F 84 ? ? ? ? 48 85";
+        var base3Sig = D("4X3RabgO60mTA9Fkyg7rSZgbzny3DutJkwPRZL0O60mXfdFkvA7rSZgbzny3DuBRhwPE");
         Base3 = await SmartAobScan(base3Sig) + 3;
         if (Base3 <= 3)
         {
@@ -151,7 +203,7 @@ public class TuningCheats : CheatsUtilities, ICheatsBase
         Base3 = (nuint)((nint)Base3 + base3Relative + 7);
         ++successCount;
 
-        const string base4Sig = "3D ? ? ? ? 00 00 ? ? 00 00 5C 42";
+        var base4Sig = D("lH/RY6gR9FaHBNFsuA7kWYcE0WOoHuRJlwvRacsO4Fs=");
         var minRange = processMainModule.BaseAddress;
         var maxRange = minRange + processMainModule.ModuleMemorySize;
         var base4List = await GetInstance().AoBScan(minRange, maxRange, base4Sig, true);

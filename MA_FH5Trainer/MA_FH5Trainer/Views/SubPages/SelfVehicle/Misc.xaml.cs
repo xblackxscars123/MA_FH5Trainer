@@ -1,14 +1,22 @@
 ﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+using XPaint.Models;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class Misc
 {
@@ -23,8 +31,18 @@ public partial class Misc
 
     public MainWindow MainWindow { get; }
     public MiscViewModel ViewModel { get; }
-    private static MiscCheats MiscCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<MiscCheats>();
-    private static CarCheats CarCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<CarCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+    private static MiscCheats MiscCheatsFh5 => XPaint.Resources.Cheats.GetClass<MiscCheats>();
+    private static CarCheats CarCheatsFh5 => XPaint.Resources.Cheats.GetClass<CarCheats>();
+=======
+    private static MiscCheats MiscCheatsInst => XPaint.Resources.Cheats.GetClass<MiscCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
+=======
+    private static MiscCheats MiscCheatsInst => XPaint.Resources.Cheats.GetClass<MiscCheats>();
+    private static CarCheats CarCheatsInst => XPaint.Resources.Cheats.GetClass<CarCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Misc.xaml.cs
     
     private async void NameSpooferSwitch_OnToggled(object sender, RoutedEventArgs e)
     {
@@ -34,13 +52,13 @@ public partial class Misc
         }
 
         ViewModel.SpooferUiElementsEnabled = false;
-        if (MiscCheatsFh5.NameDetourAddress == 0)
+        if (MiscCheatsInst.NameDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatName();
+            await MiscCheatsInst.CheatName();
         }
         ViewModel.SpooferUiElementsEnabled = true;
 
-        if (MiscCheatsFh5.NameDetourAddress == 0)
+        if (MiscCheatsInst.NameDetourAddress == 0)
         {
             toggleSwitch.Toggled -= NameSpooferSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -48,25 +66,25 @@ public partial class Misc
             return;
         }
         
-        GetInstance().WriteMemory(MiscCheatsFh5.NameDetourAddress + 0x55, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.NameDetourAddress + 0x55, toggleSwitch.IsOn ? (byte)1 : (byte)0);
         if (string.IsNullOrEmpty(NameBox.Text))
         {
             return;
         }
         
         var name = Encoding.Unicode.GetBytes(NameBox.Text);
-        GetInstance().WriteArrayMemory(MiscCheatsFh5.NameDetourAddress + 0x56, name);
+        GetInstance().WriteArrayMemory(MiscCheatsInst.NameDetourAddress + 0x56, name);
     }
 
     private void NameBox_OnTextChanged(object sender, TextChangedEventArgs e)
     {
-        if (MiscCheatsFh5.NameDetourAddress == 0 || string.IsNullOrEmpty(NameBox.Text))
+        if (MiscCheatsInst.NameDetourAddress == 0 || string.IsNullOrEmpty(NameBox.Text))
         {
             return;
         }
         
         var name = Encoding.Unicode.GetBytes(NameBox.Text);
-        GetInstance().WriteArrayMemory(MiscCheatsFh5.NameDetourAddress + 0x56, name);
+        GetInstance().WriteArrayMemory(MiscCheatsInst.NameDetourAddress + 0x56, name);
     }
 
     private async void TpSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -77,13 +95,13 @@ public partial class Misc
         }
 
         toggleSwitch.IsEnabled = false;
-        if (CarCheatsFh5.WaypointDetourAddress == 0)
+        if (CarCheatsInst.WaypointDetourAddress == 0)
         {
-            await CarCheatsFh5.CheatWaypoint();
+            await CarCheatsInst.CheatWaypoint();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (CarCheatsFh5.WaypointDetourAddress == 0)
+        if (CarCheatsInst.WaypointDetourAddress == 0)
         {
             toggleSwitch.Toggled -= TpSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -91,7 +109,7 @@ public partial class Misc
             return;
         }
         
-        GetInstance().WriteMemory(CarCheatsFh5.WaypointDetourAddress + 0x32, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CarCheatsInst.WaypointDetourAddress + 0x32, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private void MainComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -165,34 +183,34 @@ public partial class Misc
             case 0:
             {              
                 ViewModel.SkillTreeWideEditValue = Convert.ToSingle(e.NewValue);
-                if (MiscCheatsFh5.SkillTreeWideEditDetourAddress == 0)
+                if (MiscCheatsInst.SkillTreeWideEditDetourAddress == 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(MiscCheatsFh5.SkillTreeWideEditDetourAddress + 0x1C, ViewModel.SkillTreeWideEditValue);
+                GetInstance().WriteMemory(MiscCheatsInst.SkillTreeWideEditDetourAddress + 0x1C, ViewModel.SkillTreeWideEditValue);
                 break;
             }
             case 1:
             {             
                 ViewModel.SkillTreeCostValue = Convert.ToInt32(e.NewValue);
-                if (MiscCheatsFh5.SkillTreePerksCostDetourAddress == 0)
+                if (MiscCheatsInst.SkillTreePerksCostDetourAddress == 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(MiscCheatsFh5.SkillTreePerksCostDetourAddress + 0x1B, ViewModel.SkillTreeCostValue);
+                GetInstance().WriteMemory(MiscCheatsInst.SkillTreePerksCostDetourAddress + 0x1B, ViewModel.SkillTreeCostValue);
                 break;
             }
             case 2:
             {           
                 ViewModel.DroneModeHeightValue = Convert.ToSingle(e.NewValue);
-                if (MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress == 0)
+                if (MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress == 0)
                 {
                     return;
                 }
                 
-                GetInstance().WriteMemory(MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress + 0x1E, ViewModel.DroneModeHeightValue);
+                GetInstance().WriteMemory(MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress + 0x1E, ViewModel.DroneModeHeightValue);
                 break;
             }
         }
@@ -233,182 +251,182 @@ public partial class Misc
     
     private async Task PrizeScale(bool toggled)
     {
-        if (MiscCheatsFh5.PrizeScaleDetourAddress == 0)
+        if (MiscCheatsInst.PrizeScaleDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatPrizeScale();
+            await MiscCheatsInst.CheatPrizeScale();
         }
 
-        if (MiscCheatsFh5.PrizeScaleDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.PrizeScaleDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.PrizeScaleDetourAddress + 0x1C, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.PrizeScaleDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.PrizeScaleDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.PrizeScaleDetourAddress + 0x1C, Convert.ToSingle(MainValueBox.Value));
         ViewModel.SpinPrizeScaleEnabled = toggled;
     }
 
     private async Task SellFactor(bool toggled)
     {
-        if (MiscCheatsFh5.SellFactorDetourAddress == 0)
+        if (MiscCheatsInst.SellFactorDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSellFactor();
+            await MiscCheatsInst.CheatSellFactor();
         }
         
-        if (MiscCheatsFh5.SellFactorDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SellFactorDetourAddress + 0x1C, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SellFactorDetourAddress + 0x1D, Convert.ToInt32(MainValueBox.Value));
+        if (MiscCheatsInst.SellFactorDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SellFactorDetourAddress + 0x1C, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SellFactorDetourAddress + 0x1D, Convert.ToInt32(MainValueBox.Value));
         ViewModel.SpinSellFactorEnabled = toggled;
     }
 
     private async Task SkillScoreMultiplier(bool toggled)
     {
-        if (MiscCheatsFh5.SkillScoreMultiplierDetourAddress == 0)
+        if (MiscCheatsInst.SkillScoreMultiplierDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSkillScoreMultiplier();
+            await MiscCheatsInst.CheatSkillScoreMultiplier();
         }
         
-        if (MiscCheatsFh5.SkillScoreMultiplierDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillScoreMultiplierDetourAddress + 0x1C, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillScoreMultiplierDetourAddress + 0x1D, Convert.ToInt32(MainValueBox.Value));
+        if (MiscCheatsInst.SkillScoreMultiplierDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SkillScoreMultiplierDetourAddress + 0x1C, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SkillScoreMultiplierDetourAddress + 0x1D, Convert.ToInt32(MainValueBox.Value));
         ViewModel.SkillScoreMultiplierEnabled = toggled;
     }
     
     private async Task DriftScoreMultiplier(bool toggled)
     {
-        if (MiscCheatsFh5.DriftScoreMultiplierDetourAddress == 0)
+        if (MiscCheatsInst.DriftScoreMultiplierDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatDriftScoreMultiplier();
+            await MiscCheatsInst.CheatDriftScoreMultiplier();
         }
         
-        if (MiscCheatsFh5.DriftScoreMultiplierDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.DriftScoreMultiplierDetourAddress + 0x1F, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.DriftScoreMultiplierDetourAddress + 0x20, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.DriftScoreMultiplierDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.DriftScoreMultiplierDetourAddress + 0x1F, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.DriftScoreMultiplierDetourAddress + 0x20, Convert.ToSingle(MainValueBox.Value));
         ViewModel.DriftScoreMultiplierEnabled = toggled;
     }
     
     private async Task SkillTreeWideEdit(bool toggled)
     {
-        if (MiscCheatsFh5.SkillTreeWideEditDetourAddress == 0)
+        if (MiscCheatsInst.SkillTreeWideEditDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSkillTreeWideEdit();
+            await MiscCheatsInst.CheatSkillTreeWideEdit();
         }
         
-        if (MiscCheatsFh5.SkillTreeWideEditDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillTreeWideEditDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillTreeWideEditDetourAddress + 0x1C, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.SkillTreeWideEditDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SkillTreeWideEditDetourAddress + 0x1B, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SkillTreeWideEditDetourAddress + 0x1C, Convert.ToSingle(MainValueBox.Value));
         ViewModel.SkillTreeWideEditEnabled = toggled;
     }
     
     private async Task SkillTreePerksCost(bool toggled)
     {
-        if (MiscCheatsFh5.SkillTreePerksCostDetourAddress == 0)
+        if (MiscCheatsInst.SkillTreePerksCostDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSkillTreePerksCost();
+            await MiscCheatsInst.CheatSkillTreePerksCost();
         }
         
-        if (MiscCheatsFh5.SkillTreePerksCostDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillTreePerksCostDetourAddress + 0x1A, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SkillTreePerksCostDetourAddress + 0x1B, Convert.ToInt32(MainValueBox.Value));
+        if (MiscCheatsInst.SkillTreePerksCostDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SkillTreePerksCostDetourAddress + 0x1A, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SkillTreePerksCostDetourAddress + 0x1B, Convert.ToInt32(MainValueBox.Value));
         ViewModel.SkillTreeCostEnabled = toggled;
     }
     
     private async Task MissionTimeScale(bool toggled)
     {
-        if (MiscCheatsFh5.MissionTimeScaleDetourAddress == 0)
+        if (MiscCheatsInst.MissionTimeScaleDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatMissionTimeScale();
+            await MiscCheatsInst.CheatMissionTimeScale();
         }
         
-        if (MiscCheatsFh5.MissionTimeScaleDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.MissionTimeScaleDetourAddress + 0x22, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.MissionTimeScaleDetourAddress + 0x23, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.MissionTimeScaleDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.MissionTimeScaleDetourAddress + 0x22, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.MissionTimeScaleDetourAddress + 0x23, Convert.ToSingle(MainValueBox.Value));
         ViewModel.MissionTimeScaleEnabled = toggled;
     }
     
     private async Task TrailblazerTimeScale(bool toggled)
     {
-        if (MiscCheatsFh5.TrailblazerTimeScaleDetourAddress == 0)
+        if (MiscCheatsInst.TrailblazerTimeScaleDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatTrailblazerTimeScale();
+            await MiscCheatsInst.CheatTrailblazerTimeScale();
         }
         
-        if (MiscCheatsFh5.TrailblazerTimeScaleDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.TrailblazerTimeScaleDetourAddress + 0x22, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.TrailblazerTimeScaleDetourAddress + 0x23, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.TrailblazerTimeScaleDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.TrailblazerTimeScaleDetourAddress + 0x22, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.TrailblazerTimeScaleDetourAddress + 0x23, Convert.ToSingle(MainValueBox.Value));
         ViewModel.TrailblazerTimeScaleEnabled = toggled;
     }
 
     private async Task SpeedZoneMultiplier(bool toggled)
     {
-        if (MiscCheatsFh5.SpeedZoneMultiplierDetourAddress == 0)
+        if (MiscCheatsInst.SpeedZoneMultiplierDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSpeedZoneMultiplier();
+            await MiscCheatsInst.CheatSpeedZoneMultiplier();
         }
         
-        if (MiscCheatsFh5.SpeedZoneMultiplierDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SpeedZoneMultiplierDetourAddress + 0x1F, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SpeedZoneMultiplierDetourAddress + 0x20, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.SpeedZoneMultiplierDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SpeedZoneMultiplierDetourAddress + 0x1F, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SpeedZoneMultiplierDetourAddress + 0x20, Convert.ToSingle(MainValueBox.Value));
         ViewModel.SpeedZoneMultiplierEnabled = toggled;
     }
     
     private async Task RaceTimeScale(bool toggled)
     {
-        if (MiscCheatsFh5.RaceTimeScaleDetourAddress == 0)
+        if (MiscCheatsInst.RaceTimeScaleDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatRaceTimeScale();
+            await MiscCheatsInst.CheatRaceTimeScale();
         }
         
-        if (MiscCheatsFh5.RaceTimeScaleDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.RaceTimeScaleDetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.RaceTimeScaleDetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.RaceTimeScaleDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.RaceTimeScaleDetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.RaceTimeScaleDetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
         ViewModel.RaceTimeScaleEnabled = toggled;
     }
     
     private async Task DangerSignMultiplier(bool toggled)
     {
-        if (MiscCheatsFh5.DangerSign1DetourAddress == 0 ||
-            MiscCheatsFh5.DangerSign2DetourAddress == 0 ||
-            MiscCheatsFh5.DangerSign3DetourAddress == 0)
+        if (MiscCheatsInst.DangerSign1DetourAddress == 0 ||
+            MiscCheatsInst.DangerSign2DetourAddress == 0 ||
+            MiscCheatsInst.DangerSign3DetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatDangerSignMultiplier();
+            await MiscCheatsInst.CheatDangerSignMultiplier();
         }
 
-        if (MiscCheatsFh5.DangerSign1DetourAddress == 0 ||
-            MiscCheatsFh5.DangerSign2DetourAddress == 0 ||
-            MiscCheatsFh5.DangerSign3DetourAddress == 0)
+        if (MiscCheatsInst.DangerSign1DetourAddress == 0 ||
+            MiscCheatsInst.DangerSign2DetourAddress == 0 ||
+            MiscCheatsInst.DangerSign3DetourAddress == 0)
         {
             return;
         }
         
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign1DetourAddress + 0x37, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign1DetourAddress + 0x38, Convert.ToSingle(MainValueBox.Value));
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign2DetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign2DetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign3DetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.DangerSign3DetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign1DetourAddress + 0x37, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign1DetourAddress + 0x38, Convert.ToSingle(MainValueBox.Value));
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign2DetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign2DetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign3DetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.DangerSign3DetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
         ViewModel.DangerSignMultiplierEnabled = toggled;
     }
 
     private async Task SpeedTrapMultiplier(bool toggled)
     {
-        if (MiscCheatsFh5.SpeedTrapMultiplierDetourAddress == 0)
+        if (MiscCheatsInst.SpeedTrapMultiplierDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatSpeedTrapMultiplier();
+            await MiscCheatsInst.CheatSpeedTrapMultiplier();
         }
         
-        if (MiscCheatsFh5.SpeedTrapMultiplierDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.SpeedTrapMultiplierDetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.SpeedTrapMultiplierDetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.SpeedTrapMultiplierDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.SpeedTrapMultiplierDetourAddress + 0x34, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.SpeedTrapMultiplierDetourAddress + 0x35, Convert.ToSingle(MainValueBox.Value));
         ViewModel.SpeedTrapMultiplierEnabled = toggled;
     }
 
     private async Task DroneModeHeight(bool toggled)
     {
-        if (MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress == 0)
+        if (MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatDroneModeMaxHeightMulti();
+            await MiscCheatsInst.CheatDroneModeMaxHeightMulti();
         }
         
-        if (MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress == 0) return;
-        GetInstance().WriteMemory(MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress + 0x1D, toggled ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(MiscCheatsFh5.DroneModeMaxHeightMultiDetourAddress + 0x1E, Convert.ToSingle(MainValueBox.Value));
+        if (MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress == 0) return;
+        GetInstance().WriteMemory(MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress + 0x1D, toggled ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.DroneModeMaxHeightMultiDetourAddress + 0x1E, Convert.ToSingle(MainValueBox.Value));
         ViewModel.DroneModeHeightEnabled = toggled;
     }
 
@@ -420,13 +438,13 @@ public partial class Misc
         }
 
         toggleSwitch.IsEnabled = false;
-        if (MiscCheatsFh5.UnbreakableSkillScoreDetourAddress == 0)
+        if (MiscCheatsInst.UnbreakableSkillScoreDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatUnbreakableSkillScore();
+            await MiscCheatsInst.CheatUnbreakableSkillScore();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (MiscCheatsFh5.UnbreakableSkillScoreDetourAddress == 0)
+        if (MiscCheatsInst.UnbreakableSkillScoreDetourAddress == 0)
         {
             toggleSwitch.Toggled -= UnbreakableSkillScoreSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -434,7 +452,7 @@ public partial class Misc
             return;
         }
         
-        GetInstance().WriteMemory(MiscCheatsFh5.UnbreakableSkillScoreDetourAddress + 0x1A, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.UnbreakableSkillScoreDetourAddress + 0x1A, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 
     private async void RemoveBuildCapSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -446,13 +464,13 @@ public partial class Misc
 
         toggleSwitch.IsEnabled = false;
         
-        if (MiscCheatsFh5.RemoveBuildCapDetourAddress == 0)
+        if (MiscCheatsInst.RemoveBuildCapDetourAddress == 0)
         {
-            await MiscCheatsFh5.CheatRemoveBuildCap();
+            await MiscCheatsInst.CheatRemoveBuildCap();
         }
         toggleSwitch.IsEnabled = true;
 
-        if (MiscCheatsFh5.RemoveBuildCapDetourAddress == 0)
+        if (MiscCheatsInst.RemoveBuildCapDetourAddress == 0)
         {
             toggleSwitch.Toggled -= RemoveBuildCapSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -460,6 +478,6 @@ public partial class Misc
             return;
         }
         
-        GetInstance().WriteMemory(MiscCheatsFh5.RemoveBuildCapDetourAddress + 0x16, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(MiscCheatsInst.RemoveBuildCapDetourAddress + 0x16, toggleSwitch.IsOn ? (byte)1 : (byte)0);
     }
 }

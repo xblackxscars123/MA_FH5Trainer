@@ -1,14 +1,22 @@
 ﻿using System.Numerics;
 using System.Windows;
 using System.Windows.Controls;
-using MA_FH5Trainer.Cheats.ForzaHorizon5;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views.Windows;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+using XPaint.Cheats.ForzaHorizon5;
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+using XPaint.Cheats.Core;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+using XPaint.Models;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views.Windows;
 using MahApps.Metro.Controls;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Memory;
 
-namespace MA_FH5Trainer.Views.SubPages.SelfVehicle;
+namespace XPaint.Views.SubPages.SelfVehicle;
 
 public partial class Camera
 {
@@ -23,27 +31,35 @@ public partial class Camera
     
     public MainWindow MainWindow { get; }
     public CameraViewModel ViewModel { get; }
-    private static CameraCheats CameraCheatsFh5 => MA_FH5Trainer.Resources.Cheats.GetClass<CameraCheats>();
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+    private static CameraCheats CameraCheatsFh5 => XPaint.Resources.Cheats.GetClass<CameraCheats>();
+=======
+    private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
+=======
+    private static CameraCheats CameraCheatsInst => XPaint.Resources.Cheats.GetClass<CameraCheats>();
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/Views/SubPages/SelfVehicle/Camera.xaml.cs
 
     private async void LimitersScanButton_OnClick(object sender, RoutedEventArgs e)
     {
         ViewModel.AreScanPromptLimiterUiElementsVisible = false;
         ViewModel.AreScanningLimiterUiElementsVisible = true;
 
-        if (!CameraCheatsFh5.WereLimitersScanned)
+        if (!CameraCheatsInst.WereLimitersScanned)
         {
-            await CameraCheatsFh5.CheatLimiters();
+            await CameraCheatsInst.CheatLimiters();
         }
 
-        if (!CameraCheatsFh5.WereLimitersScanned)
+        if (!CameraCheatsInst.WereLimitersScanned)
         {
             ViewModel.AreScanPromptLimiterUiElementsVisible = true;
             ViewModel.AreScanningLimiterUiElementsVisible = false;
             return;
         }
         
-        LimiterMinBox.Value = GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseAddress);
-        LimiterMaxBox.Value = GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseAddress + 4);
+        LimiterMinBox.Value = GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseAddress);
+        LimiterMaxBox.Value = GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseAddress + 4);
         
         ViewModel.AreScanningLimiterUiElementsVisible = false;
         ViewModel.AreLimiterUiElementsVisible = true;
@@ -51,7 +67,7 @@ public partial class Camera
 
     private void LimiterComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        var successful = CameraCheatsFh5.WereLimitersScanned;
+        var successful = CameraCheatsInst.WereLimitersScanned;
         if (sender is not ComboBox comboBox || !successful)
         {
             return;
@@ -59,28 +75,28 @@ public partial class Camera
         
         LimiterMinBox.Value = comboBox.SelectedIndex switch
         {
-            0 => GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseAddress),
-            1 => GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseFarAddress),
-            2 => GetInstance().ReadMemory<float>(CameraCheatsFh5.DriverAddress),
-            3 => GetInstance().ReadMemory<float>(CameraCheatsFh5.HoodAddress),
-            4 => GetInstance().ReadMemory<float>(CameraCheatsFh5.BumperAddress),
+            0 => GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseAddress),
+            1 => GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseFarAddress),
+            2 => GetInstance().ReadMemory<float>(CameraCheatsInst.DriverAddress),
+            3 => GetInstance().ReadMemory<float>(CameraCheatsInst.HoodAddress),
+            4 => GetInstance().ReadMemory<float>(CameraCheatsInst.BumperAddress),
             _ => 0
         };
             
         LimiterMaxBox.Value = comboBox.SelectedIndex switch
         {
-            0 => GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseAddress + 4),
-            1 => GetInstance().ReadMemory<float>(CameraCheatsFh5.ChaseFarAddress + 4),
-            2 => GetInstance().ReadMemory<float>(CameraCheatsFh5.DriverAddress + 4),
-            3 => GetInstance().ReadMemory<float>(CameraCheatsFh5.HoodAddress + 4),
-            4 => GetInstance().ReadMemory<float>(CameraCheatsFh5.BumperAddress + 4),
+            0 => GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseAddress + 4),
+            1 => GetInstance().ReadMemory<float>(CameraCheatsInst.ChaseFarAddress + 4),
+            2 => GetInstance().ReadMemory<float>(CameraCheatsInst.DriverAddress + 4),
+            3 => GetInstance().ReadMemory<float>(CameraCheatsInst.HoodAddress + 4),
+            4 => GetInstance().ReadMemory<float>(CameraCheatsInst.BumperAddress + 4),
             _ => 0
         };
     }
 
     private void LimiterMinBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (sender is not NumericUpDown numericUpDown || !CameraCheatsFh5.WereLimitersScanned)
+        if (sender is not NumericUpDown numericUpDown || !CameraCheatsInst.WereLimitersScanned)
         {
             return;
         }
@@ -90,27 +106,27 @@ public partial class Camera
         {
             case 0:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.ChaseAddress, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.ChaseAddress, newValue);
                 break;
             }
             case 1:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.ChaseFarAddress, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.ChaseFarAddress, newValue);
                 break;
             }
             case 2:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.DriverAddress, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.DriverAddress, newValue);
                 break;
             }
             case 3:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.HoodAddress, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.HoodAddress, newValue);
                 break;
             }
             case 4:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.BumperAddress, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.BumperAddress, newValue);
                 break;
             }
         }
@@ -118,7 +134,7 @@ public partial class Camera
 
     private void LimiterMaxBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (sender is not NumericUpDown numericUpDown || !CameraCheatsFh5.WereLimitersScanned)
+        if (sender is not NumericUpDown numericUpDown || !CameraCheatsInst.WereLimitersScanned)
         {
             return;
         }
@@ -128,27 +144,27 @@ public partial class Camera
         {
             case 0:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.ChaseAddress + 4, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.ChaseAddress + 4, newValue);
                 break;
             }
             case 1:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.ChaseFarAddress + 4, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.ChaseFarAddress + 4, newValue);
                 break;
             }
             case 2:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.DriverAddress + 4, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.DriverAddress + 4, newValue);
                 break;
             }
             case 3:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.HoodAddress + 4, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.HoodAddress + 4, newValue);
                 break;
             }
             case 4:
             {
-                GetInstance().WriteMemory(CameraCheatsFh5.BumperAddress + 4, newValue);
+                GetInstance().WriteMemory(CameraCheatsInst.BumperAddress + 4, newValue);
                 break;
             }
         }
@@ -163,14 +179,14 @@ public partial class Camera
 
         OffsetSwitch.IsEnabled = false;
         toggleSwitch.IsEnabled = false;
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
-            await CameraCheatsFh5.CheatCamera();
+            await CameraCheatsInst.CheatCamera();
         }
         toggleSwitch.IsEnabled = true;
         OffsetSwitch.IsEnabled = true;
 
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
             toggleSwitch.Toggled -= FovLockSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -179,8 +195,8 @@ public partial class Camera
         }
         
         ViewModel.AreCameraHookUiElementsEnabled = toggleSwitch.IsOn;
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x59, toggleSwitch.IsOn ? (byte)1 : (byte)0);
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x5A, Convert.ToSingle(FovLockSlider.Value) / 10);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x59, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x5A, Convert.ToSingle(FovLockSlider.Value) / 10);
     }
 
     private void FovLockSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -191,12 +207,12 @@ public partial class Camera
         }
 
         slider.Value = Math.Round(e.NewValue, 2);
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
             return;
         }
         
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x5A, Convert.ToSingle(slider.Value) / 10);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x5A, Convert.ToSingle(slider.Value) / 10);
     }
 
     private async void OffsetSwitch_OnToggled(object sender, RoutedEventArgs e)
@@ -208,14 +224,14 @@ public partial class Camera
 
         FovSwitch.IsEnabled = false;
         toggleSwitch.IsEnabled = false;
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
-            await CameraCheatsFh5.CheatCamera();
+            await CameraCheatsInst.CheatCamera();
         }
         toggleSwitch.IsEnabled = true;
         FovSwitch.IsEnabled = true;
 
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
             toggleSwitch.Toggled -= OffsetSwitch_OnToggled;
             toggleSwitch.IsOn = false;
@@ -224,7 +240,7 @@ public partial class Camera
         }
         
         ViewModel.AreCameraOffsetUiElementsEnabled = toggleSwitch.IsOn;
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x5E, toggleSwitch.IsOn ? (byte)1 : (byte)0);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x5E, toggleSwitch.IsOn ? (byte)1 : (byte)0);
 
         var write = new Vector3(
             Convert.ToSingle(XValueBox.Value),
@@ -232,12 +248,12 @@ public partial class Camera
             0
         );
         
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x5F, write);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x5F, write);
     }
 
     private void OffsetBoxes_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
-        if (CameraCheatsFh5.CameraDetourAddress == 0)
+        if (CameraCheatsInst.CameraDetourAddress == 0)
         {
             return;
         }
@@ -248,6 +264,6 @@ public partial class Camera
             0
         );
         
-        GetInstance().WriteMemory(CameraCheatsFh5.CameraDetourAddress + 0x5F, write);
+        GetInstance().WriteMemory(CameraCheatsInst.CameraDetourAddress + 0x5F, write);
     }
 }

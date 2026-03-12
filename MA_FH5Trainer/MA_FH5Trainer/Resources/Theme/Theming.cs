@@ -5,7 +5,7 @@ using System.Windows.Media;
 using ControlzEx.Theming;
 using static System.Windows.Media.ColorConverter;
 
-namespace MA_FH5Trainer.Resources.Theme;
+namespace XPaint.Resources.Theme;
 
 public sealed class Theming : INotifyPropertyChanged
 {

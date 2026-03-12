@@ -11,23 +11,35 @@ using System.Windows.Input;
 using System.Xml.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MA_FH5Trainer.Cheats;
-using MA_FH5Trainer.Models;
-using MA_FH5Trainer.Resources.Keybinds;
+using XPaint.Cheats;
+using XPaint.Models;
+using XPaint.Resources.Keybinds;
 using Memory;
 using System.Windows.Media;
 using static System.Diagnostics.FileVersionInfo;
 using static System.IO.Path;
-using static MA_FH5Trainer.Resources.Cheats;
-using static MA_FH5Trainer.Resources.Memory;
+using static XPaint.Resources.Cheats;
+using static XPaint.Resources.Memory;
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-4284e8b3/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+using static XPaint.Resources.StringCipher;
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
 using Timer = System.Timers.Timer;
-using MA_FH5Trainer.ViewModels.Pages;
-using MA_FH5Trainer.ViewModels.SubPages.SelfVehicle;
-using MA_FH5Trainer.Views;
+using XPaint.ViewModels.Pages;
+using XPaint.ViewModels.SubPages.SelfVehicle;
+using XPaint.Views;
 using MahApps.Metro.Controls;
 using Environment = System.Environment;
 
-namespace MA_FH5Trainer.ViewModels.Windows;
+namespace XPaint.ViewModels.Windows;
 
 public partial class MainWindowViewModel : ObservableObject
 {
@@ -132,7 +144,7 @@ public partial class MainWindowViewModel : ObservableObject
         AttachedBrush = Brushes.Red;
         VersionBrush = Brushes.White;
         VersionTooltipText = "";
-        ProcessNameText = "Forza Horizon 5";
+        ProcessNameText = "Default";
         ProcessIdText = "0";
         PlatformText = "None";
         VersionText = "Unknown";
@@ -170,7 +182,7 @@ public partial class MainWindowViewModel : ObservableObject
             return;
         }
 
-        ApplicationTitle = "Merika's FH5 Trainer";
+        ApplicationTitle = "xpaint";
         TrainerVersion = "v" + version.ToString();
         ZeroGameText();
 
@@ -178,8 +190,8 @@ public partial class MainWindowViewModel : ObservableObject
         await CheckForUpdates();
     }
 
-    private const string GitHubRepoUrl = "https://api.github.com/repos/szaaamerik/MA_FH5Trainer/releases/latest";
-    private const string GitUpdate = "https://github.com/szaaamerik/MA_FH5Trainer/releases";
+    private const string GitHubRepoUrl = "";
+    private const string GitUpdate = "";
 
     private static async Task<string?> CheckGit()
     {
@@ -299,7 +311,7 @@ public partial class MainWindowViewModel : ObservableObject
         {
             lock (s_TimerLock)
             {
-                string processName = "forzahorizon5.exe";
+                string processName = D("wVSDJulGuxvOQZ4yvQCxEcI=");
                 if (Attached)
                 {
                     int procId = Mem.GetProcIdFromName(processName);
@@ -400,7 +412,15 @@ public partial class MainWindowViewModel : ObservableObject
     {
         return name switch
         {
-            "forzahorizon5.exe" => GameVerPlat.GameType.Fh5,
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+<<<<<<< C:/Users/GAMING/Documents/GitHub/MA_FH5Trainer/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+            var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Fh5,
+=======
+            var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
+=======
+            var s when s == D("wVSDJulGuxvOQZ4yvQCxEcI=") => GameVerPlat.GameType.Default,
+>>>>>>> C:/Users/GAMING/.windsurf/worktrees/MA_FH5Trainer/MA_FH5Trainer-90665ca8/MA_FH5Trainer/MA_FH5Trainer/ViewModels/Windows/MainWindowViewModel.cs
             _ => GameVerPlat.GameType.None
         };
     }
@@ -409,7 +429,7 @@ public partial class MainWindowViewModel : ObservableObject
     {
         return type switch
         {
-            GameVerPlat.GameType.Fh5 => "Forza Horizon 5",
+            GameVerPlat.GameType.Default => "Default",
             _ => string.Empty
         };
     }
