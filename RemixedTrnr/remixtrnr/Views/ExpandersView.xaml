@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:XPaint.Views"
       mc:Ignorable="d"
       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-      xmlns:subPages="clr-namespace:XPaint.Views.SubPages.SelfVehicle"
+    xmlns:subPages="clr-namespace:XPaint.Views.SubPages.SelfVehicle"
       xmlns:tnPages="clr-namespace:XPaint.Views.SubPages.Tuning"
       xmlns:converters="clr-namespace:XPaint.Converters"
       Title="ExpandersView" 
@@ -102,24 +102,7 @@
              </Expander>
 
 
-             <Expander x:Name="PainterExpander"
-                       Header="Painter (Image to Livery)"
-                       BorderBrush="{Binding Theming.DarkerColour}"
-                       BorderThickness="{StaticResource ControlBorderThickness}"
-                       mah:ControlsHelper.CornerRadius="{StaticResource ControlCornerRadius}"
-                       mah:HeaderedControlHelper.HeaderFontWeight="Bold"
-                       IsEnabled="{Binding ViewModel.Attached}"
-                       mah:HeaderedControlHelper.HeaderFontSize="11.5"
-                       mah:HeaderedControlHelper.HeaderBackground="{Binding Theming.DarkerColour}"
-                       Margin="10 0 10 10">
-
-                 <Frame
-                     Content="{Binding Converter={StaticResource LocalConverter}, 
-                            ConverterParameter={x:Type subPages:Painter}, Mode=OneWay}" />
-             </Expander>
-
-
-             <Expander x:Name="HandlingExpander"
+            <Expander x:Name="HandlingExpander"
                        Header="Speedhack"
                        BorderBrush="{Binding Theming.DarkerColour}"
                        BorderThickness="{StaticResource ControlBorderThickness}"

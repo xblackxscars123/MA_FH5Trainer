@@ -167,6 +167,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 
                 <mah:ColorPicker x:Name="ColorPicker" 
@@ -179,8 +180,20 @@
                                  SelectedColorChanged="ColorPickerBase_OnSelectedColorChanged"
                                  IsEnabled="{Binding ViewModel.AreHeadlightUiElementsEnabled}"
                                  mah:ControlsHelper.CornerRadius="{StaticResource ControlCornerRadius}"/>
+
+                <Border x:Name="HeadlightSwatch"
+                        Grid.Column="1"
+                        Width="48"
+                        Height="22"
+                        CornerRadius="4"
+                        BorderBrush="#4DFFFFFF"
+                        BorderThickness="1"
+                        Background="Red"
+                        VerticalAlignment="Center"
+                        Margin="6 0"
+                        ToolTip="Game colour preview — shows the actual opaque colour written to the game after alpha is applied"/>
                 
-                <mah:ToggleSwitch Grid.Column="1" 
+                <mah:ToggleSwitch Grid.Column="2" 
                                   VerticalAlignment="Center"
                                   Margin="5 0 0 0"
                                   MinWidth="0"

@@ -250,58 +250,6 @@ public partial class Unlocks
             }
         }
     }
-    private async void FreeVinylsSwitch_OnToggled(object sender, RoutedEventArgs e)
-    {
-        if (sender is not ToggleSwitch toggleSwitch || !MainWindow.ViewModel.Attached)
-        {
-            return;
-        }
-
-        toggleSwitch.IsEnabled = false;
-        if (UnlocksCheatsInst.FreeVinylsDetourAddress == 0)
-        {
-            await UnlocksCheatsInst.CheatFreeVinyls();
-        }
-
-        toggleSwitch.IsEnabled = true;
-        if (UnlocksCheatsInst.FreeVinylsDetourAddress == 0)
-        {
-            toggleSwitch.Toggled -= FreeVinylsSwitch_OnToggled;
-            toggleSwitch.IsOn = false;
-            toggleSwitch.Toggled += FreeVinylsSwitch_OnToggled;
-            return;
-        }
-
-        // TODO: write enable byte to FreeVinylsDetourAddress + offset once asm is known
-        ViewModel.IsFreeVinylsEnabled = toggleSwitch.IsOn;
-    }
-
-    private async void FreeTunesSwitch_OnToggled(object sender, RoutedEventArgs e)
-    {
-        if (sender is not ToggleSwitch toggleSwitch || !MainWindow.ViewModel.Attached)
-        {
-            return;
-        }
-
-        toggleSwitch.IsEnabled = false;
-        if (UnlocksCheatsInst.FreeTunesDetourAddress == 0)
-        {
-            await UnlocksCheatsInst.CheatFreeTunes();
-        }
-
-        toggleSwitch.IsEnabled = true;
-        if (UnlocksCheatsInst.FreeTunesDetourAddress == 0)
-        {
-            toggleSwitch.Toggled -= FreeTunesSwitch_OnToggled;
-            toggleSwitch.IsOn = false;
-            toggleSwitch.Toggled += FreeTunesSwitch_OnToggled;
-            return;
-        }
-
-        // TODO: write enable byte to FreeTunesDetourAddress + offset once asm is known
-        ViewModel.IsFreeTunesEnabled = toggleSwitch.IsOn;
-    }
-
     private async void FreeClothingSwitch_OnToggled(object sender, RoutedEventArgs e)
     {
         if (sender is not ToggleSwitch toggleSwitch || !MainWindow.ViewModel.Attached)

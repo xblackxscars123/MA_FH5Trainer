@@ -41,12 +41,6 @@ public partial class UnlocksViewModel : ObservableObject
     private bool _isSeasonalEnabled;
 
     [ObservableProperty]
-    private bool _isFreeVinylsEnabled;
-
-    [ObservableProperty]
-    private bool _isFreeTunesEnabled;
-    
-    [ObservableProperty]
     private int _xpValue;
     
     [ObservableProperty]

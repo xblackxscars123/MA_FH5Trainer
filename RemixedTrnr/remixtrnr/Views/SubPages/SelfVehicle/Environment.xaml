@@ -18,6 +18,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
@@ -33,6 +34,18 @@
                                  mah:ControlsHelper.DisabledVisualElementVisibility="Collapsed"
                                  SelectedColorChanged="Picker_OnSelectedColorChanged"
                                  IsEnabled="{Binding ViewModel.AreSunRgbUiElementsEnabled}"/>
+
+                <Border x:Name="SunSwatch"
+                        Grid.Column="2"
+                        Width="48"
+                        Height="22"
+                        CornerRadius="4"
+                        BorderBrush="#4DFFFFFF"
+                        BorderThickness="1"
+                        Background="Red"
+                        VerticalAlignment="Center"
+                        Margin="6 0"
+                        ToolTip="Game colour preview — shows the additive tint the sun applies (clamped 0–255)"/>
                 
                 <Label Grid.Column="0" 
                        Content="Color:"
@@ -41,7 +54,7 @@
                        VerticalAlignment="Center"/>
                 
                 <mah:NumericUpDown x:Name="IntensityBox" 
-                                   Grid.Column="3"
+                                   Grid.Column="4"
                                    VerticalAlignment="Center"
                                    TextAlignment="Left"
                                    Value="5"
@@ -53,13 +66,13 @@
                                    Background="{DynamicResource MahApps.Brushes.AccentBase}"
                                    BorderBrush="{DynamicResource MahApps.Brushes.AccentBase}"/>
                 
-                <Label Grid.Column="2" 
+                <Label Grid.Column="3" 
                            Content="Intensity:" 
                            Foreground="White"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
                 
-                <mah:ToggleSwitch Grid.Column="4" 
+                <mah:ToggleSwitch Grid.Column="5" 
                                   VerticalAlignment="Center"
                                   MinWidth="0"
                                   FontSize="12"

@@ -69,15 +69,28 @@ public partial class Environment
 
     private void Picker_OnSelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
     {
+        var color = Picker.SelectedColor.GetValueOrDefault();
+        var intensity = IntensityBox?.Value.GetValueOrDefault() ?? 5;
+        UpdateSunSwatch(color, intensity);
+
         if (EnvironmentCheatsInst.SunRgbDetourAddress == 0)
         {
             return;
         }
         
-        var color = Picker.SelectedColor.GetValueOrDefault();
-        var intensity = IntensityBox.Value.GetValueOrDefault();
         var gameValues = ConvertUiColorToGameValues(color, intensity);
         GetInstance().WriteMemory(EnvironmentCheatsInst.SunRgbDetourAddress + 0x33, gameValues);
+    }
+
+    private void UpdateSunSwatch(Color c, double intensity)
+    {
+        if (SunSwatch == null) return;
+        var a = c.A / 255f;
+        var i = (float)intensity;
+        SunSwatch.Background = new SolidColorBrush(Color.FromRgb(
+            (byte)Math.Clamp((int)MathF.Round(c.R / 255f * a * i * 255), 0, 255),
+            (byte)Math.Clamp((int)MathF.Round(c.G / 255f * a * i * 255), 0, 255),
+            (byte)Math.Clamp((int)MathF.Round(c.B / 255f * a * i * 255), 0, 255)));
     }
 
     private async void PullButton_OnClick(object sender, RoutedEventArgs e)
@@ -160,11 +173,15 @@ public partial class Environment
 
     private void NumericUpDown_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double?> e)
     {
+        var color = Picker.SelectedColor.GetValueOrDefault();
+        var intensity = e.NewValue.GetValueOrDefault();
+        UpdateSunSwatch(color, intensity);
+
         if (EnvironmentCheatsInst.SunRgbDetourAddress == 0)
         {
             return;
         }
         
-        GetInstance().WriteMemory(EnvironmentCheatsInst.SunRgbDetourAddress + 0x33, ConvertUiColorToGameValues(Picker.SelectedColor.GetValueOrDefault(), IntensityBox.Value.GetValueOrDefault()));
+        GetInstance().WriteMemory(EnvironmentCheatsInst.SunRgbDetourAddress + 0x33, ConvertUiColorToGameValues(color, intensity));
     }
 }

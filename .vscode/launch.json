@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "xpaint: launch executable",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "xpaint: build (Debug x64)",
+      "program": "${workspaceFolder}/RemixedTrnr/remixtrnr/bin/x64/Debug/net8.0-windows/xpaint.exe",
+      "cwd": "${workspaceFolder}/RemixedTrnr/remixtrnr/bin/x64/Debug/net8.0-windows",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    },
+    {
+      "name": "x64dbg: attach helper",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/attach-x64dbg.ps1\" -X64DbgPath \"${input:x64dbgPath}\" -ProcessName xpaint -WaitSeconds 20"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "xpaint + x64dbg attach",
+      "configurations": [
+        "xpaint: launch executable",
+        "x64dbg: attach helper"
+      ],
+      "stopAll": false
+    }
+  ],
+  "inputs": [
+    {
+      "id": "x64dbgPath",
+      "type": "promptString",
+      "description": "Full path to x64dbg.exe",
+      "default": "C:/Users/xxx/OneDrive/Documents/GitHub/x64dbg/release/x64/x64dbg.exe"
+    }
+  ]
+}

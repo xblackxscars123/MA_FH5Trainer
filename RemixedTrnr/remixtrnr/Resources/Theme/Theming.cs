@@ -25,46 +25,53 @@ public sealed class Theming : INotifyPropertyChanged
         }
     }
     
-    private Brush _lighterColour = new SolidColorBrush((Color)ConvertFromString("#2C2C2C"));
+    private Brush _lighterColour = new SolidColorBrush((Color)ConvertFromString("#2D1F4E"));
     public Brush LighterColour
     {
         get => _lighterColour;
         private set => SetField(ref _lighterColour, value);
     }
     
-    private Brush _lightColour = new SolidColorBrush((Color)ConvertFromString("#242424"));
+    private Brush _lightColour = new SolidColorBrush((Color)ConvertFromString("#241840"));
     public Brush LightColour
     {
         get => _lightColour;
         private set => SetField(ref _lightColour, value);
     }
     
-    private Brush _mainColour = new SolidColorBrush((Color)ConvertFromString("#1C1C1C"));
+    private Brush _mainColour = new SolidColorBrush((Color)ConvertFromString("#1B1033"));
     public Brush MainColour
     {
         get => _mainColour;
         private set => SetField(ref _mainColour, value);
     }
     
-    private Brush _darkishColour = new SolidColorBrush((Color)ConvertFromString("#121212"));
+    private Brush _darkishColour = new SolidColorBrush((Color)ConvertFromString("#130A26"));
     public Brush DarkishColour
     {
         get => _darkishColour;
         private set => SetField(ref _darkishColour, value);
     }
     
-    private Brush _darkColour = new SolidColorBrush((Color)ConvertFromString("#0D0D0D"));
+    private Brush _darkColour = new SolidColorBrush((Color)ConvertFromString("#0E071C"));
     public Brush DarkColour
     {
         get => _darkColour;
         private set => SetField(ref _darkColour, value);
     }
     
-    private Brush _darkerColour = new SolidColorBrush((Color)ConvertFromString("#080808"));
+    private Brush _darkerColour = new SolidColorBrush((Color)ConvertFromString("#0A0514"));
     public Brush DarkerColour
     {
         get => _darkerColour;
         private set => SetField(ref _darkerColour, value);
+    }
+
+    private Brush _accentColour = new SolidColorBrush((Color)ConvertFromString("#BF00FF"));
+    public Brush AccentColour
+    {
+        get => _accentColour;
+        private set => SetField(ref _accentColour, value);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

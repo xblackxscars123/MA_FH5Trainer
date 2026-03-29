@@ -248,7 +248,7 @@
                         mah:ControlsHelper.CornerRadius="{StaticResource ControlCornerRadius}"
                         Background="{DynamicResource MahApps.Brushes.AccentBase}"
                         BorderBrush="{DynamicResource MahApps.Brushes.AccentBase}"
-                        Command="{Binding ViewModel.ExecuteSqlCommand}"
+                    Command="{Binding ViewModel.ExecuteRankSqlCommand}"
                         CommandParameter="UPDATE Profile0_Career SET PainterLevel = 5, PainterXP = 999999999;"/>
 
                 <Rectangle Margin="4 8"
@@ -264,7 +264,7 @@
                         mah:ControlsHelper.CornerRadius="{StaticResource ControlCornerRadius}"
                         Background="{DynamicResource MahApps.Brushes.AccentBase}"
                         BorderBrush="{DynamicResource MahApps.Brushes.AccentBase}"
-                        Command="{Binding ViewModel.ExecuteSqlCommand}"
+                    Command="{Binding ViewModel.ExecuteRankSqlCommand}"
                         CommandParameter="UPDATE Profile0_Career SET TunerLevel = 5, TunerXP = 999999999;"/>
 
             </StackPanel>

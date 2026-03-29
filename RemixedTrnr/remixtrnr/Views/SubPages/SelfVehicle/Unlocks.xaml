@@ -146,31 +146,21 @@
         </Border>
         <Grid >
             <Border Style="{StaticResource CommonBorderStyle}">
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
                 <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                
-                    <mah:ToggleSwitch Content="{DynamicResource FreeClothing}"
-                                      Toggled="FreeClothingSwitch_OnToggled"
-                                      Margin="4 0"
-                                      VerticalAlignment="Center"
-                                      MinWidth="0"
-                                      FontSize="12"/>
+                    HorizontalAlignment="Center">
 
-                    <mah:ToggleSwitch Content="{DynamicResource FreeVinyls}"
-                                      Toggled="FreeVinylsSwitch_OnToggled"
-                                      Margin="4 0"
-                                      VerticalAlignment="Center"
-                                      MinWidth="0"
-                                      FontSize="12"/>
+                <mah:ToggleSwitch Content="{DynamicResource FreeClothing}"
+                          Toggled="FreeClothingSwitch_OnToggled"
+                          Margin="4 0"
+                          VerticalAlignment="Center"
+                          MinWidth="0"
+                          FontSize="12"/>
 
-                    <mah:ToggleSwitch Content="{DynamicResource FreeTunes}"
-                                      Toggled="FreeTunesSwitch_OnToggled"
-                                      Margin="4 0"
-                                      VerticalAlignment="Center"
-                                      MinWidth="0"
-                                      FontSize="12"/>
-                
+                </StackPanel>
+
                 </StackPanel>
             </Border>
             

@@ -1,0 +1,81 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "xpaint: build (Debug x64)",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/RemixedTrnr/remixtrnr/MA_FH5Trainer.csproj",
+        "-c",
+        "Debug",
+        "/p:Platform=x64"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "xpaint: run (Debug x64)",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/RemixedTrnr/remixtrnr/MA_FH5Trainer.csproj",
+        "-c",
+        "Debug",
+        "/p:Platform=x64"
+      ],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "x64dbg: open xpaint.exe",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/launch-x64dbg-target.ps1",
+        "-X64DbgPath",
+        "${input:x64dbgPath}",
+        "-TargetExe",
+        "${workspaceFolder}/RemixedTrnr/remixtrnr/bin/x64/Debug/net8.0-windows/xpaint.exe"
+      ],
+      "dependsOn": [
+        "xpaint: build (Debug x64)"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "x64dbg: attach to running xpaint",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/attach-x64dbg.ps1",
+        "-X64DbgPath",
+        "${input:x64dbgPath}",
+        "-ProcessName",
+        "xpaint"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "x64dbgPath",
+      "type": "promptString",
+      "description": "Full path to x64dbg.exe",
+      "default": "C:/Users/xxx/OneDrive/Documents/GitHub/x64dbg/release/x64/x64dbg.exe"
+    }
+  ]
+}

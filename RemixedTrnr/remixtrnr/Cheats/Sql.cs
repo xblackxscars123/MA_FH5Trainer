@@ -10,6 +10,15 @@ public class Sql : CheatsUtilities, ICheatsBase
     private UIntPtr _cDatabaseAddress, _ptr;
     public bool WereScansSuccessful;
 
+    public async Task<bool> PullAob()
+    {
+        if (WereScansSuccessful && _ptr > 0)
+            return true;
+
+        await SqlExecAobScan();
+        return WereScansSuccessful && _ptr > 0;
+    }
+
     public async Task SqlExecAobScan()
     {
         WereScansSuccessful = false;
@@ -46,12 +55,7 @@ public class Sql : CheatsUtilities, ICheatsBase
         var memory = GetInstance();
         var procHandle = memory.MProc.Handle;
 
-        if (_ptr == 0)
-        {
-            await SqlExecAobScan();
-        }
-
-        if (_ptr == 0)
+        if (!await PullAob())
         {
             ShowError("SQL", "_ptr == 0");
             return;

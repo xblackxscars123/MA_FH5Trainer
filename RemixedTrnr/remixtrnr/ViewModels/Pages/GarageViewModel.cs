@@ -36,6 +36,20 @@ public partial class GarageViewModel : ObservableObject
     }
 
     [RelayCommand]
+    private async Task ExecuteRankSql(object parameter)
+    {
+        if (parameter is not string sParam || MainWindow.Instance?.ViewModel.Attached != true)
+            return;
+
+        UiElementsEnabled = false;
+        var canEdit = await SqlDefault.PullAob();
+        if (canEdit)
+            await Query(sParam);
+
+        UiElementsEnabled = true;
+    }
+
+    [RelayCommand]
     private async Task AddCarsByType(string carType)
     {
         if (MainWindow.Instance?.ViewModel.Attached != true || string.IsNullOrEmpty(carType))

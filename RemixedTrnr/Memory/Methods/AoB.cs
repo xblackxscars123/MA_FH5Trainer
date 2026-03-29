@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
 using System.Threading.Tasks;
 using Memory.Types;
-using Reloaded.Memory.Sigscan;
-using Reloaded.Memory.Sigscan.Definitions.Structs;
 using static Memory.Imps;
 
 namespace Memory;
 
 public partial class Mem
 {
+    private const int DefaultChunkSize = 4 * 1024 * 1024;
+
     public Task<IEnumerable<nuint>> AoBScan(long start, long end, string search, bool writable = false, bool executable = true, bool mapped = false, int resultLimit = -1)
     {
         return AoBScan(start, end, search, false, writable, executable, mapped, resultLimit);
@@ -23,79 +20,79 @@ public partial class Mem
     {
         return Task.Run(() =>
         {
-            var pattern = ParsePattern(search);
-            var sig = Utils.ParseSig(search, out var mask);
-            var memoryRegions = GetEligibleMemoryRegions(start, end, readable, writable, executable);
-            var results = new List<IntPtr>(resultLimit > 0 ? resultLimit : 1024);
+            search = Utils.NormalizeSignature(search);
+            var pattern = Utils.ParseSig(search, out var mask);
+            if (pattern.Length == 0)
+            {
+                return Enumerable.Empty<nuint>();
+            }
+
+            var memoryRegions = GetEligibleMemoryRegions(start, end, readable, writable, executable, mapped);
+            List<nuint> results = [];
             
             foreach (var region in memoryRegions)
             {
-                ulong read = 0;
-                byte* heapBuffer = (byte*)NativeMemory.Alloc((nuint)region.Size);
-                if (!ReadProcessMemory(MProc.Handle, (UIntPtr)region.BaseAddress, heapBuffer, (nuint)region.Size, &read))
+                var regionResults = ScanRegion(region, pattern, mask, resultLimit > 0 ? resultLimit - results.Count : -1);
+                foreach (var result in regionResults)
                 {
-                    NativeMemory.Free(heapBuffer);
-                    continue;
-                }
-
-                if (read != (ulong)region.Size)
-                {
-                    NativeMemory.Free(heapBuffer);
-                    continue;
-                }
-                
-                int lastOffset = 0;
-                Scanner scanner = new Scanner(heapBuffer, (int)region.Size);
-                PatternScanResult result;
-                do
-                {
-                    result = scanner.FindPattern(pattern, lastOffset);
-                    if (!result.Found)
-                    {
-                        break;
-                    }
-                    
-                    lastOffset = result.Offset + sig.Length;
-                    results.Add(region.BaseAddress + result.Offset);
+                    results.Add(result);
                     if (resultLimit > 0 && results.Count >= resultLimit)
                     {
-                        break;
+                        return results.AsEnumerable();
                     }
-                } while (result.Found);
-                NativeMemory.Free(heapBuffer);
+                }
             }
 
-            List<nuint> final = [];
-            final.AddRange(results.Select(result => (nuint)result));
-            return final.AsEnumerable();
+            return results.AsEnumerable();
         });
     }
 
-    private string ParsePattern(string sig)
+    private unsafe List<nuint> ScanRegion(MemoryRegion region, ReadOnlySpan<byte> pattern, ReadOnlySpan<byte> mask, int resultLimit)
     {
-        sig = sig.Replace('*', '?').Trim();
-        while (sig.EndsWith(" ?") || sig.EndsWith(" ??"))
+        List<nuint> matches = [];
+        var overlap = Math.Max(pattern.Length - 1, 0);
+        var maxChunkSize = Math.Max(DefaultChunkSize, pattern.Length);
+        var offset = 0L;
+
+        while (offset < region.Size)
         {
-            if (sig.EndsWith(" ??"))
+            var remaining = region.Size - offset;
+            var bytesToRead = (int)Math.Min(maxChunkSize, remaining);
+            var buffer = GC.AllocateUninitializedArray<byte>(bytesToRead);
+            ulong bytesRead = 0;
+
+            fixed (byte* bufferPtr = buffer)
             {
-                sig = sig[..^3];
+                ReadProcessMemory(MProc.Handle, (nuint)((long)region.BaseAddress + offset), bufferPtr, (nuint)bytesToRead, &bytesRead);
             }
-            if (sig.EndsWith(" ?"))
+
+            if (bytesRead > 0)
             {
-                sig = sig[..^2];
+                var sliceLength = (int)Math.Min((ulong)buffer.Length, bytesRead);
+                foreach (var matchOffset in Utils.FindPatternOffsets(buffer.AsSpan(0, sliceLength), pattern, mask, resultLimit))
+                {
+                    matches.Add((nuint)((long)region.BaseAddress + offset + matchOffset));
+                    if (resultLimit > 0)
+                    {
+                        resultLimit--;
+                        if (resultLimit == 0)
+                        {
+                            return matches;
+                        }
+                    }
+                }
             }
+
+            if (bytesToRead == remaining)
+            {
+                return matches;
+            }
+
+            var advance = Math.Max(bytesToRead - overlap, 1);
+            offset += advance;
         }
-        
-        string[] tokens = sig.Split(' ');
-        for (int i = 0; i < tokens.Length; i++)
-        {
-            if (tokens[i].StartsWith('?'))
-            {
-                tokens[i] = "??";
-            }
-        }
-        
-        return string.Join(" ", tokens);
+
+        return matches;
     }
     
     private struct MemoryRegion
@@ -104,7 +101,7 @@ public partial class Mem
         public long Size;
     }
 
-    private List<MemoryRegion> GetEligibleMemoryRegions(long start, long end, bool readable, bool writable, bool executable)
+    private List<MemoryRegion> GetEligibleMemoryRegions(long start, long end, bool readable, bool writable, bool executable, bool mapped)
     {
         List<MemoryRegion> memoryRegions = [];
         GetSystemInfo(out var sysInfo);
@@ -121,11 +118,12 @@ public partial class Mem
                currentAddress.ToInt64() < end &&
                currentAddress.ToInt64() + memInfo.RegionSize > currentAddress.ToInt64())
         {
+            var isSupportedType = memInfo.Type == MemPrivate || memInfo.Type == MemImage || (mapped && memInfo.Type == MemMapped);
             if (memInfo.State != MemCommit ||
                 (long)memInfo.BaseAddress >= maxAddress ||
                 (memInfo.Protect & Guard) != 0 ||
                 (memInfo.Protect & NoAccess) != 0 ||
-                (memInfo.Type is not (MemPrivate or MemImage)))
+                !isSupportedType)
             {
                 currentAddress = IntPtr.Add((IntPtr)memInfo.BaseAddress, (int)memInfo.RegionSize);
                 continue;
@@ -141,9 +139,9 @@ public partial class Mem
                                (memInfo.Protect & ExecuteReadwrite) > 0 ||
                                (memInfo.Protect & ExecuteWriteCopy) > 0;
 
-            isReadable &= readable;
-            isWritable &= writable;
-            isExecutable &= executable;
+            isReadable = readable && isReadable;
+            isWritable = writable && isWritable;
+            isExecutable = executable && isExecutable;
 
             if (!(isReadable || isWritable || isExecutable))
             {

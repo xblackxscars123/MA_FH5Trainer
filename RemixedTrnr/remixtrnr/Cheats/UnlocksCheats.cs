@@ -30,11 +30,6 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
     public UIntPtr Clothing2DetourAddress;
     private UIntPtr _emoteAddress;
     public UIntPtr EmoteDetourAddress;
-    private UIntPtr _freeVinylsAddress;
-    public UIntPtr FreeVinylsDetourAddress;
-    private UIntPtr _freeTunesAddress;
-    public UIntPtr FreeTunesDetourAddress;
-
     private UIntPtr _getRewardsAddress;
     private UIntPtr _getPerkPrizeAddress;
 
@@ -486,78 +481,6 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         ShowError("Series points", sig);
     }
 
-    public async Task CheatFreeVinyls()
-    {
-        _freeVinylsAddress = 0;
-        FreeVinylsDetourAddress = 0;
-
-        // TODO: replace with real signature found via RE
-        // Target: the ownership check function called when loading a community vinyl in the livery editor
-        // Method: attach CE, open livery editor, apply a locked community vinyl, "find what reads" the owned flag
-        // The cmov/test+jz that gates the result is the patch target — same pattern as CheatClothing
-        var sig = D("TODO_REPLACE_WITH_REAL_SIG");
-        _freeVinylsAddress = await SmartAobScan(sig);
-
-        if (_freeVinylsAddress > 0)
-        {
-            if (GetClass<Bypass>().CallAddress <= 3)
-            {
-                await GetClass<Bypass>().DisableCrcChecks();
-            }
-
-            if (GetClass<Bypass>().CallAddress <= 3) return;
-
-            // TODO: replace with real detour bytes once struct is known
-            // Should patch the ownership check to always return owned=true
-            // See CheatClothing for reference — it patches a cmov to always use the "owned" branch
-            var asm = new byte[]
-            {
-                // TODO
-            };
-
-            FreeVinylsDetourAddress = GetInstance().CreateDetour(_freeVinylsAddress, asm, 6);
-        }
-        else
-        {
-            ShowError("Free Vinyls", sig);
-        }
-    }
-
-    public async Task CheatFreeTunes()
-    {
-        _freeTunesAddress = 0;
-        FreeTunesDetourAddress = 0;
-
-        // TODO: replace with real signature found via RE
-        // Target: the ownership check function called when loading a locked shared tune
-        // Method: attach CE, open tune browser, select a locked tune, "find what reads" the owned flag
-        // The cmov/test+jz that gates the result is the patch target — same pattern as CheatClothing
-        var sig = D("TODO_REPLACE_WITH_REAL_SIG");
-        _freeTunesAddress = await SmartAobScan(sig);
-
-        if (_freeTunesAddress > 0)
-        {
-            if (GetClass<Bypass>().CallAddress <= 3)
-            {
-                await GetClass<Bypass>().DisableCrcChecks();
-            }
-
-            if (GetClass<Bypass>().CallAddress <= 3) return;
-
-            // TODO: replace with real detour bytes once struct is known
-            var asm = new byte[]
-            {
-                // TODO
-            };
-
-            FreeTunesDetourAddress = GetInstance().CreateDetour(_freeTunesAddress, asm, 6);
-        }
-        else
-        {
-            ShowError("Free Tunes", sig);
-        }
-    }
-
     public async Task CheatClothing()
     {
         _clothing1Address = 0;
@@ -667,18 +590,6 @@ public class UnlocksCheats : CheatsUtilities, ICheatsBase, IRevertBase
         {
             mem.WriteArrayMemory(_clothing2Address, new byte[] { 0x8B, 0xB8, 0x88, 0x00,0x00, 0x00 });
             Free(Clothing2DetourAddress);
-        }
-
-        if (_freeVinylsAddress > 0)
-        {
-            // TODO: restore original bytes (fill in once real sig/asm is known)
-            Free(FreeVinylsDetourAddress);
-        }
-
-        if (_freeTunesAddress > 0)
-        {
-            // TODO: restore original bytes (fill in once real sig/asm is known)
-            Free(FreeTunesDetourAddress);
         }
 
         if (_seasonalAddress > 0)

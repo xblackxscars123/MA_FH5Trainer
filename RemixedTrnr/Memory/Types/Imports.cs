@@ -27,6 +27,10 @@ public static partial class Imps
     [LibraryImport("kernel32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static unsafe partial bool WriteProcessMemory(nint hProcess, nuint lpBaseAddress, void* lpBuffer, nuint nSize, nint lpNumberOfBytesWritten);
+
+    [LibraryImport("kernel32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool CloseHandle(nint hObject);
     
     [LibraryImport("kernel32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]

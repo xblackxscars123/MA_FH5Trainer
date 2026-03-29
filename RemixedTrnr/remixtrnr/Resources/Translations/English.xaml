@@ -129,8 +129,6 @@
     <system:String x:Key="CarXp">Car Xp</system:String>
     <system:String x:Key="CarPoints">Car Points</system:String>
     <system:String x:Key="FreeClothing">Free Clothing</system:String>
-    <system:String x:Key="FreeVinyls">Free Vinyls</system:String>
-    <system:String x:Key="FreeTunes">Free Tunes</system:String>
     
     <!-- Customization.xaml -->
     <system:String x:Key="GlowingPaint">Glowing Paint</system:String>

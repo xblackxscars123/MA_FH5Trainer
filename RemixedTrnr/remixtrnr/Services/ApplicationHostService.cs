@@ -38,10 +38,10 @@ public class ApplicationHostService(IServiceProvider serviceProvider) : IHostedS
 
     private static void InitTheme()
     {
-        var converted = (Color)ColorConverter.ConvertFromString(Theming.GetInstance().DarkerColour.ToString());
+        var converted = (Color)ColorConverter.ConvertFromString(Theming.GetInstance().AccentColour.ToString());
         const string name = "AccentCol";
         ThemeManager.Current.ClearThemes();
-        ThemeManager.Current.AddTheme(new Theme(name, name, "Dark", "Red", converted, new SolidColorBrush(converted), true, false));
+        ThemeManager.Current.AddTheme(new Theme(name, name, "Dark", "Purple", converted, new SolidColorBrush(converted), true, false));
         ThemeManager.Current.ChangeTheme(Application.Current, name);
     }
 }

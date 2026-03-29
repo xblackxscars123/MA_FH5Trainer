@@ -82,7 +82,7 @@ public partial class Mem
     private static extern bool OpenProcessToken(IntPtr ProcessHandle, uint DesiredAccess, out IntPtr TokenHandle);
 
     [DllImport("advapi32.dll", SetLastError = true)]
-    private static extern bool LookupPrivilegeValue(string lpSystemName, string lpName, out LUID lpLuid);
+    private static extern bool LookupPrivilegeValue(string? lpSystemName, string lpName, out LUID lpLuid);
 
     [DllImport("advapi32.dll", SetLastError = true)]
     private static extern bool AdjustTokenPrivileges(
@@ -109,21 +109,26 @@ public partial class Mem
             return false;
         }
 
-        if (!LookupPrivilegeValue(null, SE_DEBUG_NAME, out LUID luid))
+        try
         {
-            return false;
+            if (!LookupPrivilegeValue(null, SE_DEBUG_NAME, out LUID luid))
+            {
+                return false;
+            }
+
+            TOKEN_PRIVILEGES tp = new TOKEN_PRIVILEGES
+            {
+                PrivilegeCount = 1,
+                Luid = luid,
+                Attributes = SE_PRIVILEGE_ENABLED
+            };
+
+            return AdjustTokenPrivileges(hToken, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero);
         }
-
-        TOKEN_PRIVILEGES tp = new TOKEN_PRIVILEGES
+        finally
         {
-            PrivilegeCount = 1,
-            Luid = luid,
-            Attributes = SE_PRIVILEGE_ENABLED
-        };
-
-        bool result = AdjustTokenPrivileges(hToken, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero);
-        Marshal.FreeHGlobal(hToken);
-        return result;
+            CloseHandle(hToken);
+        }
     }
 
     private static bool IsAdministrator()

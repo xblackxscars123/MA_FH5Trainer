@@ -123,13 +123,25 @@ public partial class Customization
             return;
         }
 
+        var color = e.NewValue.GetValueOrDefault();
+        UpdateHeadlightSwatch(color);
+
         if (CustomizationCheatsInst.HeadlightColourDetourAddress == 0)
         {
             return;
         }
         
-        var write = ConvertUiColorToGameValues(e.NewValue.GetValueOrDefault());
+        var write = ConvertUiColorToGameValues(color);
         GetInstance().WriteMemory(CustomizationCheatsInst.HeadlightColourDetourAddress + 0x23, write);
+    }
+
+    private void UpdateHeadlightSwatch(Color c)
+    {
+        var v = ConvertUiColorToGameValues(c);
+        HeadlightSwatch.Background = new SolidColorBrush(Color.FromRgb(
+            (byte)Math.Clamp((int)MathF.Round(v.X * 255), 0, 255),
+            (byte)Math.Clamp((int)MathF.Round(v.Y * 255), 0, 255),
+            (byte)Math.Clamp((int)MathF.Round(v.Z * 255), 0, 255)));
     }
 
     private static Vector3 ConvertUiColorToGameValues(Color uiColor)

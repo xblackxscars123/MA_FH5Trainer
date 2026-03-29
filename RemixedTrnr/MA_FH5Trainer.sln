@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xpaint", "remixtrnr\MA_FH5T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Memory", "Memory\Memory.csproj", "{ACE634A9-48DE-48F2-9CA5-BEC1BC5D7164}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Memory.Validation", "Memory.Validation\Memory.Validation.csproj", "{8850EEEF-C8A3-4761-A762-1C1625ECFD77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +26,10 @@ Global
 		{ACE634A9-48DE-48F2-9CA5-BEC1BC5D7164}.Debug|x64.Build.0 = Debug|x64
 		{ACE634A9-48DE-48F2-9CA5-BEC1BC5D7164}.Release|x64.ActiveCfg = Release|x64
 		{ACE634A9-48DE-48F2-9CA5-BEC1BC5D7164}.Release|x64.Build.0 = Release|x64
+		{8850EEEF-C8A3-4761-A762-1C1625ECFD77}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8850EEEF-C8A3-4761-A762-1C1625ECFD77}.Debug|x64.Build.0 = Debug|Any CPU
+		{8850EEEF-C8A3-4761-A762-1C1625ECFD77}.Release|x64.ActiveCfg = Release|Any CPU
+		{8850EEEF-C8A3-4761-A762-1C1625ECFD77}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

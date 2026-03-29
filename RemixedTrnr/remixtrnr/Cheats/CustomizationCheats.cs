@@ -146,23 +146,33 @@ public class CustomizationCheats : CheatsUtilities, ICheatsBase, IRevertBase
         {
             mem.WriteArrayMemory(_paintAddress, new byte[] { 0x0F, 0x11, 0x0A, 0xC6, 0x42, 0xF0, 0x01 });
             Free(PaintDetourAddress);
+            PaintDetourAddress = 0;
+            _paintAddress = 0;
         }
 
         if (_headlightColourAddress > 0)
         {
             mem.WriteArrayMemory(_headlightColourAddress, new byte[] { 0x0F, 0x10, 0x7B, 0x50, 0xF3, 0x44, 0x0F, 0x10, 0x83, 0x84, 0x00, 0x00, 0x00 });
             Free(HeadlightColourDetourAddress);
+            HeadlightColourDetourAddress = 0;
+            _headlightColourAddress = 0;
         }
 
         if (_cleanlinessAddress > 0)
         {
             mem.WriteArrayMemory(_cleanlinessAddress, new byte[] { 0xF3, 0x0F, 0x10, 0x88, 0x0C, 0x8A, 0x00, 0x00 });
             Free(CleanlinessDetourAddress);
+            CleanlinessDetourAddress = 0;
+            _cleanlinessAddress = 0;
         }
 
-        if (_backfireTimeAddress <= 0) return;
-        mem.WriteArrayMemory(_backfireTimeAddress, new byte[] { 0xF3, 0x0F, 0x10, 0x81, 0x7C, 0x3A, 0x00, 0x00 });
-        Free(BackfireTimeDetourAddress);
+        if (_backfireTimeAddress > 0)
+        {
+            mem.WriteArrayMemory(_backfireTimeAddress, new byte[] { 0xF3, 0x0F, 0x10, 0x81, 0x7C, 0x3A, 0x00, 0x00 });
+            Free(BackfireTimeDetourAddress);
+            BackfireTimeDetourAddress = 0;
+            _backfireTimeAddress = 0;
+        }
     }
 
     public void Reset()
