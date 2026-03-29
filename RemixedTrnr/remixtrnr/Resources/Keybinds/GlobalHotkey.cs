@@ -14,6 +14,7 @@ public partial class GlobalHotkey : ObservableObject
 
     public ModifierKeys Modifier { get; set; }
     public Key Key{ get; set; }
+    public GamepadButton GamepadBinding { get; set; }
 
     public bool IsPressed { get; set; }
     public bool CanExecute { get; set; }
@@ -34,19 +35,21 @@ public partial class GlobalHotkey : ObservableObject
     
     private class HotkeyData
     {
-        public HotkeyData(string modifier, string key)
+        public HotkeyData(string modifier, string key, string gamepadButton)
         {
             Modifier = modifier;
             Key = key;
+            GamepadButton = gamepadButton;
         }
 
         public string Modifier { get; set; }
         public string Key { get; set; }
+        public string GamepadButton { get; set; }
     }
     
     public void Save()
     {
-        var data = new HotkeyData(Modifier.ToString(),Key.ToString());
+        var data = new HotkeyData(Modifier.ToString(), Key.ToString(), GamepadBinding.ToString());
         string json = JsonSerializer.Serialize(data);
         string path = GetSavePath();
         File.WriteAllText(path, json);
@@ -75,6 +78,11 @@ public partial class GlobalHotkey : ObservableObject
         if (Enum.TryParse(data.Key, out Key key))
         {
             Key = key;
+        }
+
+        if (!string.IsNullOrEmpty(data.GamepadButton) && Enum.TryParse(data.GamepadButton, out GamepadButton gpBtn))
+        {
+            GamepadBinding = gpBtn;
         }
 
         Hotkey = new HotKey(Key, Modifier);

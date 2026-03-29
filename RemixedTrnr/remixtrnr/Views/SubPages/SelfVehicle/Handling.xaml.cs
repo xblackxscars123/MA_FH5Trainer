@@ -19,6 +19,7 @@ public partial class Handling
     private readonly GlobalHotkey _brakeHackHotkey = new("Super Brake", ModifierKeys.None, Key.None, BrakeHackCallback, 1);
     private readonly GlobalHotkey _velocityHotkey = new("Velocity", ModifierKeys.None, Key.Q, VelocityCallback, 1);
     private readonly GlobalHotkey _wheelspeedHotkey = new("Wheelspeed", ModifierKeys.None, Key.None, WheelspeedCallback, 1);
+    private readonly GlobalHotkey _gravityHotkey = new("Gravity", ModifierKeys.None, Key.None, GravityCallback, 250, true) { GamepadBinding = GamepadButton.Back };
 
     private static void JumpHackCallback()
     {
@@ -64,6 +65,19 @@ public partial class Handling
         GetInstance().WriteMemory(address + CarCheatsOffsets.WheelspeedEnabled, (byte)1);
     }
 
+    private static void GravityCallback()
+    {
+        var address = CarCheatsInst.GravityDetourAddress;
+        if (address <= UIntPtr.Zero)
+        {
+            return;
+        }
+
+        var mem = GetInstance();
+        var current = mem.ReadMemory<byte>(address + 0x59);
+        mem.WriteMemory(address + 0x59, current == 1 ? (byte)0 : (byte)1);
+    }
+
     public Handling()
     {
         ViewModel = new HandlingViewModel();
@@ -74,6 +88,7 @@ public partial class Handling
         HotkeysManager.Register(_brakeHackHotkey);
         HotkeysManager.Register(_velocityHotkey);
         HotkeysManager.Register(_wheelspeedHotkey);
+        HotkeysManager.Register(_gravityHotkey);
 
         if (MainWindow.Instance != null)
         {
@@ -82,6 +97,7 @@ public partial class Handling
             viewModel.Hotkeys.Add(_wheelspeedHotkey);
             viewModel.Hotkeys.Add(_jumpHackHotkey);
             viewModel.Hotkeys.Add(_brakeHackHotkey);
+            viewModel.Hotkeys.Add(_gravityHotkey);
         }
     }
 

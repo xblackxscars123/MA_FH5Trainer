@@ -20,6 +20,7 @@ public partial class MainWindow
         Loaded += (_, _) =>
         {
             ViewModel.HotkeysEnabled = HotkeysManager.SetupSystemHook();
+            HotkeysManager.StartGamepad();
             set.IsEnabled = ViewModel.HotkeysEnabled;
         };
 
@@ -29,6 +30,7 @@ public partial class MainWindow
     
     protected override void OnClosed(EventArgs e)
     {
+        HotkeysManager.StopGamepad();
         HotkeysManager.ShutdownSystemHook();
         base.OnClosed(e);
     }

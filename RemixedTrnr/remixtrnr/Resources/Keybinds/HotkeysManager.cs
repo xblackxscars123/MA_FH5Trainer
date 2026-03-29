@@ -153,6 +153,30 @@ public static partial class HotkeysManager
         hotkey.Load();
     }
 
+    public static void StartGamepad()
+    {
+        GamepadPoller.Start();
+    }
+
+    public static void StopGamepad()
+    {
+        GamepadPoller.Stop();
+    }
+
+    public static void CheckGamepadHotkeys(GamepadButton justPressed, bool leftTrigger, bool rightTrigger)
+    {
+        foreach (var hotkey in s_hotkeys)
+        {
+            if (hotkey.GamepadBinding == GamepadButton.None || !hotkey.CanExecute)
+                continue;
+
+            if ((justPressed & hotkey.GamepadBinding) == hotkey.GamepadBinding)
+            {
+                hotkey.Callback();
+            }
+        }
+    }
+
     public static bool CheckExists(Key key, ModifierKeys modifierKeys)
     {
         return s_hotkeys.Any(globalHotkey => globalHotkey.Key == key && globalHotkey.Modifier == modifierKeys);
